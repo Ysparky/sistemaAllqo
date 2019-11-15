@@ -11794,24 +11794,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emperatriz\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emperatriz\\Desktop\\ALLQO PROGRA\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Downloads\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo.csproj",
       "projectName": "sistemaAllqo",
-      "projectPath": "C:\\Users\\Emperatriz\\Desktop\\ALLQO PROGRA\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo.csproj",
-      "packagesPath": "C:\\Users\\Emperatriz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emperatriz\\Desktop\\ALLQO PROGRA\\sistemaAllqo\\sistemaAllqo\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\Downloads\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\Downloads\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Emperatriz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -11846,16 +11847,23 @@
             "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
