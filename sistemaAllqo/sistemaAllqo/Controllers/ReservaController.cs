@@ -26,6 +26,7 @@ namespace sistemaAllqo.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+
         // GET: Reserva/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -50,9 +51,9 @@ namespace sistemaAllqo.Controllers
         // GET: Reserva/Create
         public IActionResult Create()
         {
-            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente");
-            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio");
-            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador");
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "nombres");
+            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria");
+            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "nombres");
             return View();
         }
 
@@ -63,15 +64,20 @@ namespace sistemaAllqo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Reserva_ID,fechaReservada,fechaSesion,estado,idCliente,idServicio,idTrabajador")] Reserva reserva)
         {
-            if (ModelState.IsValid)
+            reserva.fechaReservada = DateTime.Now;
+            if (reserva.fechaSesion < reserva.fechaReservada)
+            {
+                ModelState.AddModelError("", "La fecha que usted ha ingresado es pasada, elija otra fecha");
+            }
+            else if (ModelState.IsValid)
             {
                 _context.Add(reserva);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", reserva.idCliente);
-            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio", reserva.idServicio);
-            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador", reserva.idTrabajador);
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "nombres", reserva.idCliente);
+            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria", reserva.idServicio);
+            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "nombres", reserva.idTrabajador);
             return View(reserva);
         }
 

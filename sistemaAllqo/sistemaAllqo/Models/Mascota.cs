@@ -15,6 +15,7 @@ namespace sistemaAllqo.Models
         public int idCliente { get; set; }
         public Cliente cliente { get; set; }
         public int idRaza { get; set; }
-        public Raza raza { get; set; }
+        public Raza raza { get; set; }    
+        public ICollection<ReservaxMascota> reservasxmascota { get; set; }
     }
 }

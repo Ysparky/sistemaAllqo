@@ -204,7 +204,7 @@ namespace sistemaAllqo.Data.Migrations
 
                     b.Property<string>("nombres");
 
-                    b.Property<int>("numCelular");
+                    b.Property<long>("numCelular");
 
                     b.HasKey("idCliente");
 
@@ -286,7 +286,7 @@ namespace sistemaAllqo.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<float>("agregado");
+                    b.Property<decimal>("agregado");
 
                     b.Property<string>("nombre");
 
@@ -301,7 +301,7 @@ namespace sistemaAllqo.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("edad");
+                    b.Property<string>("edad");
 
                     b.Property<int>("idCliente");
 
@@ -364,6 +364,27 @@ namespace sistemaAllqo.Data.Migrations
                     b.ToTable("Reserva");
                 });
 
+            modelBuilder.Entity("sistemaAllqo.Models.ReservaxMascota", b =>
+                {
+                    b.Property<int>("idresxMas")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("Reserva_ID");
+
+                    b.Property<int>("idMascota");
+
+                    b.Property<int>("idReserva");
+
+                    b.HasKey("idresxMas");
+
+                    b.HasIndex("Reserva_ID");
+
+                    b.HasIndex("idMascota");
+
+                    b.ToTable("ReservaxMascota");
+                });
+
             modelBuilder.Entity("sistemaAllqo.Models.Servicio", b =>
                 {
                     b.Property<int>("idServicio")
@@ -374,14 +395,14 @@ namespace sistemaAllqo.Data.Migrations
 
                     b.Property<string>("descripcion");
 
-                    b.Property<float>("precio");
+                    b.Property<decimal>("precio");
 
                     b.HasKey("idServicio");
 
                     b.ToTable("Servicio");
                 });
 
-            modelBuilder.Entity("sistemaAllqo.Models.TipoPerro", b =>
+            modelBuilder.Entity("sistemaAllqo.Models.tipoPerro", b =>
                 {
                     b.Property<int>("idTipo")
                         .ValueGeneratedOnAdd()
@@ -412,7 +433,7 @@ namespace sistemaAllqo.Data.Migrations
 
                     b.Property<string>("nombres");
 
-                    b.Property<int>("numCel");
+                    b.Property<long>("numCel");
 
                     b.HasKey("idTrabajador");
 
@@ -529,7 +550,7 @@ namespace sistemaAllqo.Data.Migrations
 
             modelBuilder.Entity("sistemaAllqo.Models.Raza", b =>
                 {
-                    b.HasOne("sistemaAllqo.Models.TipoPerro", "tipoperro")
+                    b.HasOne("sistemaAllqo.Models.tipoPerro", "tipoperro")
                         .WithMany("razas")
                         .HasForeignKey("idTipo")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -550,6 +571,18 @@ namespace sistemaAllqo.Data.Migrations
                     b.HasOne("sistemaAllqo.Models.Trabajador", "trabajador")
                         .WithMany("reservas")
                         .HasForeignKey("idTrabajador")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("sistemaAllqo.Models.ReservaxMascota", b =>
+                {
+                    b.HasOne("sistemaAllqo.Models.Reserva", "reserva")
+                        .WithMany("reservasxmascota")
+                        .HasForeignKey("Reserva_ID");
+
+                    b.HasOne("sistemaAllqo.Models.Mascota", "mascota")
+                        .WithMany("reservasxmascota")
+                        .HasForeignKey("idMascota")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
