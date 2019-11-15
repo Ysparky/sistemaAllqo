@@ -12,5 +12,9 @@ namespace sistemaAllqo.Models
         public int idMascota { get; set; }
         public string nombre { get; set; }
         public int edad { get; set; }
+        public int idCliente { get; set; }
+        public Cliente cliente { get; set; }
+        public int idRaza { get; set; }
+        public Raza raza { get; set; }
     }
 }

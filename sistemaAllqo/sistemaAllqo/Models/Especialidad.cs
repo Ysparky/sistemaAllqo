@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace sistemaAllqo.Models
 {
-    public class Raza
+    public class Especialidad
     {
         [Key]
-        public int idRaza { get; set; }
+        public int idEspecialidad { get; set; }
         public string nombre { get; set; }
-        public int idTipo { get; set; }
-        public TipoPerro tipoperro { get; set; }
-        public ICollection<Mascota> mascotas { get; set; }
+        public ICollection<Trabajador> trabajadores { get; set; }
     }
 }

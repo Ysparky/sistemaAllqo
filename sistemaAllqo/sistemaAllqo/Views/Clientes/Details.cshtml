@@ -1,0 +1,67 @@
+﻿@model sistemaAllqo.Models.Cliente
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombres)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nombres)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.apellidos)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dni)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dni)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.correo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.correo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.numCelular)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.numCelular)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.lugar)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.lugar.idLugar)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idCliente">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

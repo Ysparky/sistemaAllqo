@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace sistemaAllqo.Models
 {
-    public class Raza
+    public class Lugar
     {
         [Key]
-        public int idRaza { get; set; }
+        public int idLugar { get; set; }
         public string nombre { get; set; }
-        public int idTipo { get; set; }
-        public TipoPerro tipoperro { get; set; }
-        public ICollection<Mascota> mascotas { get; set; }
+        public decimal agregado { get; set; }
+        public ICollection<Cliente> clientes { get; set; }
     }
 }
