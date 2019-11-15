@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sistemaAllqo.Models
 {
-    public class TipoPerro
+    public class tipoPerro
     {
         [Key]
         public int idTipo { get; set; }

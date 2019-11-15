@@ -1,0 +1,43 @@
+﻿@model sistemaAllqo.Models.Mascota
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mascota</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.edad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.edad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cliente.idCliente)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.raza)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.raza.idRaza)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idMascota">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
