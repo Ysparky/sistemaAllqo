@@ -38,3 +38,8 @@ C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\net
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Details.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Edit.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Index.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Create.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Delete.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Details.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Edit.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Index.g.cshtml.cs

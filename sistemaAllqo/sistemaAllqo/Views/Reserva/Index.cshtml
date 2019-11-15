@@ -1,0 +1,67 @@
+﻿@model IEnumerable<sistemaAllqo.Models.Reserva>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaReservada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaSesion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.servicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trabajador)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaReservada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaSesion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliente.apellidos)
+                @Html.DisplayFor(modelItem => item.cliente.nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicio.categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trabajador.apellidos)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Reserva_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Reserva_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Reserva_ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

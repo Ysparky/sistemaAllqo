@@ -13,7 +13,7 @@ namespace sistemaAllqo.Models
         public string nombres { get; set; }
         public string apellidos { get; set; }
         public int dni { get; set; }
-        public  int numCel{ get; set; }
+        public long numCel{ get; set; }
         public string direccion { get; set; }
         public int idEspecialidad { get; set; }
         public Especialidad especialidad { get; set; }

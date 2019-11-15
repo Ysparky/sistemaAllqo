@@ -65,7 +65,7 @@ namespace sistemaAllqo.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idLugar"] = new SelectList(_context.Lugar, "idLugar", "idLugar", cliente.idLugar);
+            ViewData["idLugar"] = new SelectList(_context.Lugar, "idLugar", "nombre", cliente.idLugar);
             return View(cliente);
         }
 
@@ -82,7 +82,7 @@ namespace sistemaAllqo.Controllers
             {
                 return NotFound();
             }
-            ViewData["idLugar"] = new SelectList(_context.Lugar, "idLugar", "idLugar", cliente.idLugar);
+            ViewData["idLugar"] = new SelectList(_context.Lugar, "idLugar", "nombre", cliente.idLugar);
             return View(cliente);
         }
 

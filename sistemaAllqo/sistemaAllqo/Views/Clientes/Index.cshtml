@@ -10,31 +10,31 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table table-hover table-striped table-responsive text-center">
     <thead>
-        <tr>
-            <th>
+        <tr >
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.nombres)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.apellidos)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.direccion)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.dni)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.correo)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.numCelular)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.estado)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.lugar)
             </th>
             <th></th>
@@ -61,7 +61,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.numCelular)
             </td>
-            <td class="success">
+            <td>
                 @Html.DisplayFor(modelItem => item.estado)
             </td>
 

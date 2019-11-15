@@ -1,0 +1,55 @@
+﻿@model sistemaAllqo.Models.Reserva
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reserva</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaReservada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fechaReservada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaSesion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fechaSesion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cliente.idCliente)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.servicio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.servicio.idServicio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.trabajador)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.trabajador.idTrabajador)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Reserva_ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
