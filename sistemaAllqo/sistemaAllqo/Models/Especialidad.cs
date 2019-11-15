@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace sistemaAllqo.Models
 {
-    public class TipoPerro
+    public class Especialidad
     {
         [Key]
-        public int idTipo { get; set; }
+        public int idEspecialidad { get; set; }
         public string nombre { get; set; }
-        public float agregado { get; set; }
     }
 }

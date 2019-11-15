@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace sistemaAllqo.Models
 {
-    public class TipoPerro
+    public class Usuario
     {
         [Key]
-        public int idTipo { get; set; }
-        public string nombre { get; set; }
-        public float agregado { get; set; }
+        public int idUsuario { get; set; }
+        public string usuario { get; set; }
+        public string password { get; set; }
+
     }
 }
