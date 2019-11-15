@@ -33,19 +33,20 @@
             @Html.DisplayNameFor(model => model.mascota)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.mascota.idMascota)
+            @Html.DisplayFor(model => model.mascota.nombre)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.servicio)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.servicio.idServicio)
+            @Html.DisplayFor(model => model.servicio.categoria)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.trabajador)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.trabajador.idTrabajador)
+            @Html.DisplayFor(model => model.trabajador.apellidos)
+            @Html.DisplayFor(model => model.trabajador.nombres)
         </dd>
     </dl>
 </div>

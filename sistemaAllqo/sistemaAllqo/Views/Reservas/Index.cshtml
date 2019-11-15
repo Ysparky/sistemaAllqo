@@ -10,7 +10,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" id="tabla">
     <thead>
         <tr>
             <th>
@@ -47,13 +47,14 @@
                 @Html.DisplayFor(modelItem => item.estado)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.mascota.idMascota)
+                @Html.DisplayFor(modelItem => item.mascota.nombre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.servicio.idServicio)
+                @Html.DisplayFor(modelItem => item.servicio.categoria)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.trabajador.idTrabajador)
+                @Html.DisplayFor(modelItem => item.trabajador.apellidos)
+                @Html.DisplayFor(modelItem => item.trabajador.nombres)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.idReserva">Edit</a> |

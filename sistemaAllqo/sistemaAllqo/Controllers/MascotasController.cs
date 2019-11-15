@@ -49,8 +49,8 @@ namespace sistemaAllqo.Controllers
         // GET: Mascotas/Create
         public IActionResult Create()
         {
-            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente");
-            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "idRaza");
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "apellidos");
+            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "nombre");
             return View();
         }
 
@@ -67,8 +67,8 @@ namespace sistemaAllqo.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", mascota.idCliente);
-            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "idRaza", mascota.idRaza);
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "apellidos", mascota.idCliente);
+            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "nombre", mascota.idRaza);
             return View(mascota);
         }
 
@@ -85,8 +85,8 @@ namespace sistemaAllqo.Controllers
             {
                 return NotFound();
             }
-            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", mascota.idCliente);
-            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "idRaza", mascota.idRaza);
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "apellidos", mascota.idCliente);
+            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "nombre", mascota.idRaza);
             return View(mascota);
         }
 

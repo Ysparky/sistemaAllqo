@@ -50,9 +50,9 @@ namespace sistemaAllqo.Controllers
         // GET: Reservas/Create
         public IActionResult Create()
         {
-            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "idMascota");
-            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio");
-            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador");
+            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "nombre");
+            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria");
+            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "nombres");
             return View();
         }
 
@@ -63,15 +63,20 @@ namespace sistemaAllqo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("idReserva,fechaReservada,fechaSesion,estado,idMascota,idServicio,idTrabajador")] Reserva reserva)
         {
-            if (ModelState.IsValid)
+            reserva.fechaReservada = DateTime.Now;
+            if (reserva.fechaSesion < reserva.fechaReservada)
+            {
+                ModelState.AddModelError("","La fecha ingresada ha caducado, ingrese una fecha válida");
+            }
+            else if (ModelState.IsValid)
             {
                 _context.Add(reserva);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "idMascota", reserva.idMascota);
-            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio", reserva.idServicio);
-            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador", reserva.idTrabajador);
+            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "nombre", reserva.idMascota);
+            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria", reserva.idServicio);
+            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "apellidos", reserva.idTrabajador);
             return View(reserva);
         }
 
@@ -88,9 +93,9 @@ namespace sistemaAllqo.Controllers
             {
                 return NotFound();
             }
-            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "idMascota", reserva.idMascota);
-            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio", reserva.idServicio);
-            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador", reserva.idTrabajador);
+            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "nombre", reserva.idMascota);
+            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria", reserva.idServicio);
+            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "apellidos", reserva.idTrabajador);
             return View(reserva);
         }
 
@@ -126,9 +131,9 @@ namespace sistemaAllqo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "idMascota", reserva.idMascota);
-            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio", reserva.idServicio);
-            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador", reserva.idTrabajador);
+            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "nombre", reserva.idMascota);
+            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria", reserva.idServicio);
+            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "apellidos", reserva.idTrabajador);
             return View(reserva);
         }
 

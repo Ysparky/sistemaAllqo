@@ -20,15 +20,40 @@ C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\net
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Details.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Edit.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Index.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Especialidads\Create.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Especialidads\Delete.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Especialidads\Details.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Especialidads\Edit.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Especialidads\Index.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Lugars\Create.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Lugars\Delete.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Lugars\Details.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Lugars\Edit.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Lugars\Index.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Create.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Delete.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Details.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Edit.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Index.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Razas\Create.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Razas\Delete.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Razas\Details.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Razas\Edit.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Razas\Index.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reservas\Create.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reservas\Delete.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reservas\Details.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reservas\Edit.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reservas\Index.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Servicios\Create.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Servicios\Delete.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Servicios\Details.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Servicios\Edit.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Servicios\Index.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
@@ -42,112 +67,3 @@ C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\net
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.dll
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.pdb
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.csproj.CopyComplete
-<<<<<<< HEAD
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.csprojAssemblyReference.cache
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reservas\Create.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reservas\Delete.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reservas\Details.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reservas\Edit.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reservas\Index.g.cshtml.cs
-=======
-<<<<<<< HEAD
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Create.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Delete.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Details.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Edit.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Index.g.cshtml.cs
-<<<<<<< HEAD
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Create.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Delete.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Details.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Edit.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Index.g.cshtml.cs
-=======
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\bin\Debug\netcoreapp2.1\appsettings.Development.json
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\bin\Debug\netcoreapp2.1\appsettings.json
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\bin\Debug\netcoreapp2.1\sistemaAllqo.deps.json
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\bin\Debug\netcoreapp2.1\sistemaAllqo.runtimeconfig.json
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\bin\Debug\netcoreapp2.1\sistemaAllqo.runtimeconfig.dev.json
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\bin\Debug\netcoreapp2.1\sistemaAllqo.dll
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\bin\Debug\netcoreapp2.1\sistemaAllqo.pdb
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\bin\Debug\netcoreapp2.1\sistemaAllqo.Views.dll
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\bin\Debug\netcoreapp2.1\sistemaAllqo.Views.pdb
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.csprojAssemblyReference.cache
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.RazorAssemblyInfo.cache
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.RazorAssemblyInfo.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.AssemblyInfoInputs.cache
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.AssemblyInfo.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.TagHelpers.input.cache
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.TagHelpers.output.cache
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.RazorCoreGenerate.cache
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Create.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Delete.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Details.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Edit.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Index.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.RazorTargetAssemblyInfo.cache
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.RazorTargetAssemblyInfo.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.Views.pdb
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.dll
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.pdb
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.csproj.CopyComplete
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Create.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Delete.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Details.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Edit.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Index.cshtml.g.cs
->>>>>>> 57994c177787c81a9b419ff4a925473a6caa0e11
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Create.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Delete.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Details.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Edit.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Index.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Servicios\Create.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Servicios\Delete.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Servicios\Details.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Servicios\Edit.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Servicios\Index.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Sesions\Create.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Sesions\Delete.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Sesions\Details.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Sesions\Edit.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Sesions\Index.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Especialidads\Create.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Especialidads\Delete.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Especialidads\Details.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Especialidads\Edit.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Especialidads\Index.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Lugars\Create.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Lugars\Delete.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Lugars\Details.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Lugars\Edit.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Lugars\Index.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Razas\Create.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Razas\Delete.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Razas\Details.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Razas\Edit.cshtml.g.cs
-C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Razas\Index.cshtml.g.cs
-=======
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\ReservaxMascotas\Create.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\ReservaxMascotas\Delete.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\ReservaxMascotas\Details.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\ReservaxMascotas\Edit.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\ReservaxMascotas\Index.g.cshtml.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.csprojAssemblyReference.cache
->>>>>>> 2fb3174d6ff52f2b40c23d6f211f3371579e1951
->>>>>>> cd360ee7a0379be5ee1af12e4f0d06b1d77049fa

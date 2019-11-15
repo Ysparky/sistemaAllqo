@@ -27,13 +27,14 @@
             @Html.DisplayNameFor(model => model.cliente)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.cliente.idCliente)
+            @Html.DisplayFor(model => model.cliente.apellidos)
+            @Html.DisplayFor(model => model.cliente.nombres)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.raza)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.raza.idRaza)
+            @Html.DisplayFor(model => model.raza.nombre)
         </dd>
     </dl>
 </div>
