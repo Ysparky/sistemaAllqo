@@ -10,24 +10,23 @@ using sistemaAllqo.Models;
 
 namespace sistemaAllqo.Controllers
 {
-    public class ReservaController : Controller
+    public class ReservasController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ReservaController(ApplicationDbContext context)
+        public ReservasController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Reserva
+        // GET: Reservas
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Reserva.Include(r => r.cliente).Include(r => r.servicio).Include(r => r.trabajador);
+            var applicationDbContext = _context.Reserva.Include(r => r.mascota).Include(r => r.servicio).Include(r => r.trabajador);
             return View(await applicationDbContext.ToListAsync());
         }
 
-
-        // GET: Reserva/Details/5
+        // GET: Reservas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,10 +35,10 @@ namespace sistemaAllqo.Controllers
             }
 
             var reserva = await _context.Reserva
-                .Include(r => r.cliente)
+                .Include(r => r.mascota)
                 .Include(r => r.servicio)
                 .Include(r => r.trabajador)
-                .FirstOrDefaultAsync(m => m.Reserva_ID == id);
+                .FirstOrDefaultAsync(m => m.idReserva == id);
             if (reserva == null)
             {
                 return NotFound();
@@ -48,40 +47,35 @@ namespace sistemaAllqo.Controllers
             return View(reserva);
         }
 
-        // GET: Reserva/Create
+        // GET: Reservas/Create
         public IActionResult Create()
         {
-            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "nombres");
-            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria");
-            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "nombres");
+            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "idMascota");
+            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio");
+            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador");
             return View();
         }
 
-        // POST: Reserva/Create
+        // POST: Reservas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Reserva_ID,fechaReservada,fechaSesion,estado,idCliente,idServicio,idTrabajador")] Reserva reserva)
+        public async Task<IActionResult> Create([Bind("idReserva,fechaReservada,fechaSesion,estado,idMascota,idServicio,idTrabajador")] Reserva reserva)
         {
-            reserva.fechaReservada = DateTime.Now;
-            if (reserva.fechaSesion < reserva.fechaReservada)
-            {
-                ModelState.AddModelError("", "La fecha que usted ha ingresado es pasada, elija otra fecha");
-            }
-            else if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Add(reserva);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "nombres", reserva.idCliente);
-            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria", reserva.idServicio);
-            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "nombres", reserva.idTrabajador);
+            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "idMascota", reserva.idMascota);
+            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio", reserva.idServicio);
+            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador", reserva.idTrabajador);
             return View(reserva);
         }
 
-        // GET: Reserva/Edit/5
+        // GET: Reservas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -94,20 +88,20 @@ namespace sistemaAllqo.Controllers
             {
                 return NotFound();
             }
-            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", reserva.idCliente);
+            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "idMascota", reserva.idMascota);
             ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio", reserva.idServicio);
             ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador", reserva.idTrabajador);
             return View(reserva);
         }
 
-        // POST: Reserva/Edit/5
+        // POST: Reservas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Reserva_ID,fechaReservada,fechaSesion,estado,idCliente,idServicio,idTrabajador")] Reserva reserva)
+        public async Task<IActionResult> Edit(int id, [Bind("idReserva,fechaReservada,fechaSesion,estado,idMascota,idServicio,idTrabajador")] Reserva reserva)
         {
-            if (id != reserva.Reserva_ID)
+            if (id != reserva.idReserva)
             {
                 return NotFound();
             }
@@ -121,7 +115,7 @@ namespace sistemaAllqo.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ReservaExists(reserva.Reserva_ID))
+                    if (!ReservaExists(reserva.idReserva))
                     {
                         return NotFound();
                     }
@@ -132,13 +126,13 @@ namespace sistemaAllqo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", reserva.idCliente);
+            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "idMascota", reserva.idMascota);
             ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio", reserva.idServicio);
             ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador", reserva.idTrabajador);
             return View(reserva);
         }
 
-        // GET: Reserva/Delete/5
+        // GET: Reservas/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -147,10 +141,10 @@ namespace sistemaAllqo.Controllers
             }
 
             var reserva = await _context.Reserva
-                .Include(r => r.cliente)
+                .Include(r => r.mascota)
                 .Include(r => r.servicio)
                 .Include(r => r.trabajador)
-                .FirstOrDefaultAsync(m => m.Reserva_ID == id);
+                .FirstOrDefaultAsync(m => m.idReserva == id);
             if (reserva == null)
             {
                 return NotFound();
@@ -159,7 +153,7 @@ namespace sistemaAllqo.Controllers
             return View(reserva);
         }
 
-        // POST: Reserva/Delete/5
+        // POST: Reservas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -172,7 +166,7 @@ namespace sistemaAllqo.Controllers
 
         private bool ReservaExists(int id)
         {
-            return _context.Reserva.Any(e => e.Reserva_ID == id);
+            return _context.Reserva.Any(e => e.idReserva == id);
         }
     }
 }

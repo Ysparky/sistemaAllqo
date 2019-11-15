@@ -14,18 +14,23 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="fechaReservada" class="control-label"></label>
+                <input asp-for="fechaReservada" class="form-control" />
+                <span asp-validation-for="fechaReservada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="fechaSesion" class="control-label"></label>
                 <input asp-for="fechaSesion" class="form-control" />
                 <span asp-validation-for="fechaSesion" class="text-danger"></span>
             </div>
-            <div class="form-group" hidden>
+            <div class="form-group">
                 <label asp-for="estado" class="control-label"></label>
-                <input asp-for="estado" value="EMITIDO" class="form-control" />
+                <input asp-for="estado" class="form-control" />
                 <span asp-validation-for="estado" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="idCliente" class="control-label"></label>
-                <select asp-for="idCliente" class ="form-control" asp-items="ViewBag.idCliente"></select>
+                <label asp-for="idMascota" class="control-label"></label>
+                <select asp-for="idMascota" class ="form-control" asp-items="ViewBag.idMascota"></select>
             </div>
             <div class="form-group">
                 <label asp-for="idServicio" class="control-label"></label>

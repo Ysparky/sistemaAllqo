@@ -30,6 +30,5 @@ namespace sistemaAllqo.Data
         public DbSet<sistemaAllqo.Models.tipoPerro> tipoPerro { get; set; }
         public DbSet<sistemaAllqo.Models.Trabajador> Trabajador { get; set; }
         public DbSet<sistemaAllqo.Models.Usuario> Usuario { get; set; }
-        public DbSet<sistemaAllqo.Models.ReservaxMascota> ReservaxMascota { get; set; }
     }
 }

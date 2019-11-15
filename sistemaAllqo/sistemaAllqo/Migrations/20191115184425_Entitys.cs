@@ -2,12 +2,51 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace sistemaAllqo.Data.Migrations
+namespace sistemaAllqo.Migrations
 {
-    public partial class ReservaxMascotaAgregada : Migration
+    public partial class Entitys : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "AspNetRoles",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedName = table.Column<string>(maxLength: 256, nullable: true),
+                    ConcurrencyStamp = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetRoles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUsers",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    UserName = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
+                    Email = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(nullable: false),
+                    PasswordHash = table.Column<string>(nullable: true),
+                    SecurityStamp = table.Column<string>(nullable: true),
+                    ConcurrencyStamp = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
+                    LockoutEnabled = table.Column<bool>(nullable: false),
+                    AccessFailedCount = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Especialidad",
                 columns: table => new
@@ -76,6 +115,112 @@ namespace sistemaAllqo.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuario", x => x.idUsuario);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetRoleClaims",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    RoleId = table.Column<string>(nullable: false),
+                    ClaimType = table.Column<string>(nullable: true),
+                    ClaimValue = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetRoleClaims", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserClaims",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<string>(nullable: false),
+                    ClaimType = table.Column<string>(nullable: true),
+                    ClaimValue = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserClaims", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AspNetUserClaims_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserLogins",
+                columns: table => new
+                {
+                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
+                    ProviderKey = table.Column<string>(maxLength: 128, nullable: false),
+                    ProviderDisplayName = table.Column<string>(nullable: true),
+                    UserId = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserLogins", x => new { x.LoginProvider, x.ProviderKey });
+                    table.ForeignKey(
+                        name: "FK_AspNetUserLogins_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserRoles",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(nullable: false),
+                    RoleId = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserRoles", x => new { x.UserId, x.RoleId });
+                    table.ForeignKey(
+                        name: "FK_AspNetUserRoles_AspNetRoles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AspNetUserRoles_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserTokens",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(nullable: false),
+                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
+                    Name = table.Column<string>(maxLength: 128, nullable: false),
+                    Value = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
+                    table.ForeignKey(
+                        name: "FK_AspNetUserTokens_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -149,42 +294,6 @@ namespace sistemaAllqo.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Reserva",
-                columns: table => new
-                {
-                    Reserva_ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    fechaReservada = table.Column<DateTime>(nullable: false),
-                    fechaSesion = table.Column<DateTime>(nullable: false),
-                    estado = table.Column<string>(nullable: true),
-                    idCliente = table.Column<int>(nullable: false),
-                    idServicio = table.Column<int>(nullable: false),
-                    idTrabajador = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Reserva", x => x.Reserva_ID);
-                    table.ForeignKey(
-                        name: "FK_Reserva_Cliente_idCliente",
-                        column: x => x.idCliente,
-                        principalTable: "Cliente",
-                        principalColumn: "idCliente",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Reserva_Servicio_idServicio",
-                        column: x => x.idServicio,
-                        principalTable: "Servicio",
-                        principalColumn: "idServicio",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Reserva_Trabajador_idTrabajador",
-                        column: x => x.idTrabajador,
-                        principalTable: "Trabajador",
-                        principalColumn: "idTrabajador",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Mascota",
                 columns: table => new
                 {
@@ -213,29 +322,38 @@ namespace sistemaAllqo.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ReservaxMascota",
+                name: "Reserva",
                 columns: table => new
                 {
-                    idresxMas = table.Column<int>(nullable: false)
+                    idReserva = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    idReserva = table.Column<int>(nullable: false),
-                    Reserva_ID = table.Column<int>(nullable: true),
-                    idMascota = table.Column<int>(nullable: false)
+                    fechaReservada = table.Column<DateTime>(nullable: false),
+                    fechaSesion = table.Column<DateTime>(nullable: false),
+                    estado = table.Column<string>(nullable: true),
+                    idMascota = table.Column<int>(nullable: false),
+                    idServicio = table.Column<int>(nullable: false),
+                    idTrabajador = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReservaxMascota", x => x.idresxMas);
+                    table.PrimaryKey("PK_Reserva", x => x.idReserva);
                     table.ForeignKey(
-                        name: "FK_ReservaxMascota_Reserva_Reserva_ID",
-                        column: x => x.Reserva_ID,
-                        principalTable: "Reserva",
-                        principalColumn: "Reserva_ID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_ReservaxMascota_Mascota_idMascota",
+                        name: "FK_Reserva_Mascota_idMascota",
                         column: x => x.idMascota,
                         principalTable: "Mascota",
                         principalColumn: "idMascota",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Reserva_Servicio_idServicio",
+                        column: x => x.idServicio,
+                        principalTable: "Servicio",
+                        principalColumn: "idServicio",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Reserva_Trabajador_idTrabajador",
+                        column: x => x.idTrabajador,
+                        principalTable: "Trabajador",
+                        principalColumn: "idTrabajador",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -294,6 +412,45 @@ namespace sistemaAllqo.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_AspNetRoleClaims_RoleId",
+                table: "AspNetRoleClaims",
+                column: "RoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "RoleNameIndex",
+                table: "AspNetRoles",
+                column: "NormalizedName",
+                unique: true,
+                filter: "[NormalizedName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserClaims_UserId",
+                table: "AspNetUserClaims",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserLogins_UserId",
+                table: "AspNetUserLogins",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserRoles_RoleId",
+                table: "AspNetUserRoles",
+                column: "RoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "EmailIndex",
+                table: "AspNetUsers",
+                column: "NormalizedEmail");
+
+            migrationBuilder.CreateIndex(
+                name: "UserNameIndex",
+                table: "AspNetUsers",
+                column: "NormalizedUserName",
+                unique: true,
+                filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Cliente_idLugar",
                 table: "Cliente",
                 column: "idLugar");
@@ -334,9 +491,9 @@ namespace sistemaAllqo.Data.Migrations
                 column: "idTipo");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reserva_idCliente",
+                name: "IX_Reserva_idMascota",
                 table: "Reserva",
-                column: "idCliente");
+                column: "idMascota");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reserva_idServicio",
@@ -347,16 +504,6 @@ namespace sistemaAllqo.Data.Migrations
                 name: "IX_Reserva_idTrabajador",
                 table: "Reserva",
                 column: "idTrabajador");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ReservaxMascota_Reserva_ID",
-                table: "ReservaxMascota",
-                column: "Reserva_ID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ReservaxMascota_idMascota",
-                table: "ReservaxMascota",
-                column: "idMascota");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Trabajador_idEspecialidad",
@@ -387,13 +534,31 @@ namespace sistemaAllqo.Data.Migrations
                 table: "ComprobantePago");
 
             migrationBuilder.DropTable(
-                name: "ReservaxMascota");
+                name: "AspNetRoleClaims");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserClaims");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserLogins");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserRoles");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Reserva");
 
             migrationBuilder.DropTable(
                 name: "Usuario");
 
             migrationBuilder.DropTable(
-                name: "Reserva");
+                name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Mascota");

@@ -30,7 +30,6 @@ namespace sistemaAllqo.Models
         [DisplayName("Lugar")]
         public Lugar lugar { get; set; }
         public ICollection<Mascota> mascotas { get; set; }
-        public ICollection<Reserva> reservas { get; set; }
         public ICollection<ComprobantePago> comprobantes { get; set; }
     }
 }

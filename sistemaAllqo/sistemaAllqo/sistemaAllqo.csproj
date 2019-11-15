@@ -6,10 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.cs" />
+    <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs" />
     <Compile Remove="Data\Migrations\20191115073734_[Migracion].cs" />
     <Compile Remove="Data\Migrations\20191115073734_[Migracion].Designer.cs" />
     <Compile Remove="Data\Migrations\20191115160834_Agregada-Migracion-RxM.cs" />
     <Compile Remove="Data\Migrations\20191115160834_Agregada-Migracion-RxM.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191115164402_ReservaxMascotaAgregada.cs" />
+    <Compile Remove="Data\Migrations\20191115164402_ReservaxMascotaAgregada.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191115180752_ Demo.cs" />
+    <Compile Remove="Data\Migrations\20191115180752_ Demo.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191115181428_Tablav1.cs" />
+    <Compile Remove="Data\Migrations\20191115181428_Tablav1.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191115182105_Tablav1.cs" />
+    <Compile Remove="Data\Migrations\20191115182105_Tablav1.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +27,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
 </Project>

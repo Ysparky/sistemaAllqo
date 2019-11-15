@@ -10,9 +10,6 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-
-
-
 <table class="table">
     <thead>
         <tr>
@@ -26,7 +23,7 @@
                 @Html.DisplayNameFor(model => model.estado)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.cliente)
+                @Html.DisplayNameFor(model => model.mascota)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.servicio)
@@ -50,19 +47,18 @@
                 @Html.DisplayFor(modelItem => item.estado)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.cliente.apellidos)
-                @Html.DisplayFor(modelItem => item.cliente.nombres)
+                @Html.DisplayFor(modelItem => item.mascota.idMascota)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.servicio.categoria)
+                @Html.DisplayFor(modelItem => item.servicio.idServicio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.trabajador.apellidos)
+                @Html.DisplayFor(modelItem => item.trabajador.idTrabajador)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Reserva_ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Reserva_ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Reserva_ID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.idReserva">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idReserva">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idReserva">Delete</a>
             </td>
         </tr>
 }

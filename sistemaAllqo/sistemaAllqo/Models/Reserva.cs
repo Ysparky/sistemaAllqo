@@ -10,17 +10,21 @@ namespace sistemaAllqo.Models
     public class Reserva
     {
         [Key]
-        public int Reserva_ID { get; set; }
+        public int idReserva { get; set; }
         [DisplayName("Fecha Reservada")]
         public DateTime fechaReservada { get; set; }
         [DisplayName("Fecha de Sesión")]
         public DateTime fechaSesion { get; set; }
         [DisplayName("Estado")]
         public string estado { get; set; }
-        [DisplayName("Cliente")]
-        public int idCliente { get; set; }
-        [DisplayName("Cliente")]
-        public Cliente cliente { get; set; }
+        //[DisplayName("Cliente")]
+        //public int idCliente { get; set; }
+        //[DisplayName("Cliente")]
+        //public Cliente cliente { get; set; }
+        [DisplayName("Mascota")]
+        public int idMascota { get; set; }
+        [DisplayName("Mascota")]
+        public Mascota mascota { get; set; }
         [DisplayName("Servicio")]
         public int idServicio { get; set; }
         [DisplayName("Servicio")]
@@ -29,6 +33,5 @@ namespace sistemaAllqo.Models
         public int idTrabajador { get; set; }
         [DisplayName("Trabajador")]
         public Trabajador trabajador { get; set; }
-        public ICollection<ReservaxMascota> reservasxmascota { get; set; }
     }
 }

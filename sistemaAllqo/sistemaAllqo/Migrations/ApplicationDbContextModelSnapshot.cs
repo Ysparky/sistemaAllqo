@@ -3,17 +3,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using sistemaAllqo.Data;
 
-namespace sistemaAllqo.Data.Migrations
+namespace sistemaAllqo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191115164402_ReservaxMascotaAgregada")]
-    partial class ReservaxMascotaAgregada
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -339,7 +337,7 @@ namespace sistemaAllqo.Data.Migrations
 
             modelBuilder.Entity("sistemaAllqo.Models.Reserva", b =>
                 {
-                    b.Property<int>("Reserva_ID")
+                    b.Property<int>("idReserva")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -349,42 +347,21 @@ namespace sistemaAllqo.Data.Migrations
 
                     b.Property<DateTime>("fechaSesion");
 
-                    b.Property<int>("idCliente");
+                    b.Property<int>("idMascota");
 
                     b.Property<int>("idServicio");
 
                     b.Property<int>("idTrabajador");
 
-                    b.HasKey("Reserva_ID");
+                    b.HasKey("idReserva");
 
-                    b.HasIndex("idCliente");
+                    b.HasIndex("idMascota");
 
                     b.HasIndex("idServicio");
 
                     b.HasIndex("idTrabajador");
 
                     b.ToTable("Reserva");
-                });
-
-            modelBuilder.Entity("sistemaAllqo.Models.ReservaxMascota", b =>
-                {
-                    b.Property<int>("idresxMas")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("Reserva_ID");
-
-                    b.Property<int>("idMascota");
-
-                    b.Property<int>("idReserva");
-
-                    b.HasKey("idresxMas");
-
-                    b.HasIndex("Reserva_ID");
-
-                    b.HasIndex("idMascota");
-
-                    b.ToTable("ReservaxMascota");
                 });
 
             modelBuilder.Entity("sistemaAllqo.Models.Servicio", b =>
@@ -560,9 +537,9 @@ namespace sistemaAllqo.Data.Migrations
 
             modelBuilder.Entity("sistemaAllqo.Models.Reserva", b =>
                 {
-                    b.HasOne("sistemaAllqo.Models.Cliente", "cliente")
+                    b.HasOne("sistemaAllqo.Models.Mascota", "mascota")
                         .WithMany("reservas")
-                        .HasForeignKey("idCliente")
+                        .HasForeignKey("idMascota")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("sistemaAllqo.Models.Servicio", "servicio")
@@ -573,18 +550,6 @@ namespace sistemaAllqo.Data.Migrations
                     b.HasOne("sistemaAllqo.Models.Trabajador", "trabajador")
                         .WithMany("reservas")
                         .HasForeignKey("idTrabajador")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("sistemaAllqo.Models.ReservaxMascota", b =>
-                {
-                    b.HasOne("sistemaAllqo.Models.Reserva", "reserva")
-                        .WithMany("reservasxmascota")
-                        .HasForeignKey("Reserva_ID");
-
-                    b.HasOne("sistemaAllqo.Models.Mascota", "mascota")
-                        .WithMany("reservasxmascota")
-                        .HasForeignKey("idMascota")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
