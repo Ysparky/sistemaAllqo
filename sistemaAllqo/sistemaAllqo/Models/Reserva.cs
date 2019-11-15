@@ -29,5 +29,6 @@ namespace sistemaAllqo.Models
         public int idTrabajador { get; set; }
         [DisplayName("Trabajador")]
         public Trabajador trabajador { get; set; }
+        public ICollection<ReservaxMascota> reservasxmascota { get; set; }
     }
 }

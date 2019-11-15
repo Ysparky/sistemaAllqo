@@ -93,3 +93,9 @@ C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netc
 C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Edit.cshtml.g.cs
 C:\Users\Usuario\Downloads\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Index.cshtml.g.cs
 >>>>>>> 57994c177787c81a9b419ff4a925473a6caa0e11
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Create.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Delete.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Details.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Edit.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Mascotas\Index.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reserva\Horario.g.cshtml.cs
