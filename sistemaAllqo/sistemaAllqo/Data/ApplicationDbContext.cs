@@ -22,7 +22,7 @@ namespace sistemaAllqo.Data
         public DbSet<sistemaAllqo.Models.Raza> Raza { get; set; }
         public DbSet<sistemaAllqo.Models.Reserva> Reserva { get; set; }
         public DbSet<sistemaAllqo.Models.Servicio> Servicio { get; set; }
-        public DbSet<sistemaAllqo.Models.TipoPerro> tipoPerro { get; set; }
+        public DbSet<sistemaAllqo.Models.tipoPerro> tipoPerro { get; set; }
         public DbSet<sistemaAllqo.Models.Trabajador> Trabajador { get; set; }
         public DbSet<sistemaAllqo.Models.Usuario> Usuario { get; set; }
     }
