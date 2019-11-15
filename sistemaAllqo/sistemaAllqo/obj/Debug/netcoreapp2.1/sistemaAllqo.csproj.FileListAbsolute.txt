@@ -9,7 +9,6 @@ C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\net
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.csproj.CoreCompileInputs.cache
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.RazorAssemblyInfo.cache
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.RazorAssemblyInfo.cs
-C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.AssemblyInfoInputs.cache
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.AssemblyInfo.cs
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.TagHelpers.input.cache
@@ -33,3 +32,4 @@ C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\net
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.dll
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.pdb
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.csproj.CopyComplete
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

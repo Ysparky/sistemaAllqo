@@ -34,7 +34,7 @@ namespace sistemaAllqo
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContextPool<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("ApplicationDbContext")));
             services.AddDefaultIdentity<IdentityUser>()
