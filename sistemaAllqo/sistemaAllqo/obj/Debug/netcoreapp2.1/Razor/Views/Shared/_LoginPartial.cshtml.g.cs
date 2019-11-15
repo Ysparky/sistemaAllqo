@@ -81,20 +81,12 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("    ");
             EndContext();
             BeginContext(185, 555, false);
-<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.g.cshtml.cs
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "97e0e3d59d1b4edd8251d2e8b9f5bdfe", async() => {
-=======
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eabd24e054094d248c1f22429362bcd4", async() => {
->>>>>>> 57994c177787c81a9b419ff4a925473a6caa0e11:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb617f59a7694816be6fb6423a3bb0d9", async() => {
                 BeginContext(359, 86, true);
                 WriteLiteral("\r\n        <ul class=\"nav navbar-nav navbar-right\">\r\n            <li>\r\n                ");
                 EndContext();
                 BeginContext(445, 112, false);
-<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.g.cshtml.cs
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc97836e370e4b6abee0e42d0da02182", async() => {
-=======
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad8d47fb29b04213a4554ba34b1568e4", async() => {
->>>>>>> 57994c177787c81a9b419ff4a925473a6caa0e11:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "037d568c13334e119dfb4388a390ae7f", async() => {
                     BeginContext(516, 6, true);
                     WriteLiteral("Hello ");
                     EndContext();
@@ -177,11 +169,7 @@ else
             WriteLiteral("    <ul class=\"nav navbar-nav navbar-right\">\r\n        <li>");
             EndContext();
             BeginContext(812, 64, false);
-<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.g.cshtml.cs
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c2fe52fc9f94845938bb3d6de9b7b6d", async() => {
-=======
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88d926632501447fb0f87ea39161fbce", async() => {
->>>>>>> 57994c177787c81a9b419ff4a925473a6caa0e11:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a6af48d5518041e2b5484741916c7cb4", async() => {
                 BeginContext(864, 8, true);
                 WriteLiteral("Register");
                 EndContext();
@@ -205,11 +193,7 @@ else
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(895, 58, false);
-<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.g.cshtml.cs
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c80a35c6a3ba4948a85007ec72db3080", async() => {
-=======
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df00dce8eff14e07aa51f30afd2a6dc9", async() => {
->>>>>>> 57994c177787c81a9b419ff4a925473a6caa0e11:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dd472e2d1a8a438ca6e79e95804bc8f9", async() => {
                 BeginContext(944, 5, true);
                 WriteLiteral("Login");
                 EndContext();

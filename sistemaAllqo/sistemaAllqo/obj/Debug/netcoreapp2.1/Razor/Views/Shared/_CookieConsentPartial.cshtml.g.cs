@@ -97,11 +97,7 @@ using Microsoft.AspNetCore.Http.Features;
                     ");
             EndContext();
             BeginContext(1234, 92, false);
-<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4dcd763387cb4718b370e795718ab381", async() => {
-=======
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59cc3a98eff742c58e345b857488defe", async() => {
->>>>>>> 57994c177787c81a9b419ff4a925473a6caa0e11:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.cshtml.g.cs
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea18f164e31b47fb967b4c5db1f57492", async() => {
                 BeginContext(1312, 10, true);
                 WriteLiteral("Learn More");
                 EndContext();

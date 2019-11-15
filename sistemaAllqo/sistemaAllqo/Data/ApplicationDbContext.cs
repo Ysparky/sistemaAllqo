@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using sistemaAllqo.Models;
 
 namespace sistemaAllqo.Data
 {
@@ -25,5 +26,6 @@ namespace sistemaAllqo.Data
         public DbSet<sistemaAllqo.Models.tipoPerro> tipoPerro { get; set; }
         public DbSet<sistemaAllqo.Models.Trabajador> Trabajador { get; set; }
         public DbSet<sistemaAllqo.Models.Usuario> Usuario { get; set; }
+        public DbSet<sistemaAllqo.Models.Sesion> Sesion { get; set; }
     }
 }

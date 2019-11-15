@@ -75,11 +75,7 @@ using sistemaAllqo.Models;
             ");
             EndContext();
             BeginContext(484, 71, false);
-<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6c406ad0cf6d419b8ae6343131241649", async() => {
-=======
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4d565c71a4524388996e9b3cfbca54fe", async() => {
->>>>>>> 57994c177787c81a9b419ff4a925473a6caa0e11:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.cshtml.g.cs
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "30a7fff3f58e432cbd1e68f1c5968fef", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -110,11 +106,7 @@ using sistemaAllqo.Models;
             ");
             EndContext();
             BeginContext(987, 77, false);
-<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ab6db830be164341a0e6af23ba6f5c7a", async() => {
-=======
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ea25b9224ad14064ab2b6ceab492321a", async() => {
->>>>>>> 57994c177787c81a9b419ff4a925473a6caa0e11:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.cshtml.g.cs
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2d36afacacb54ad5b52062058c5dc5f0", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -145,11 +137,7 @@ using sistemaAllqo.Models;
             ");
             EndContext();
             BeginContext(1520, 79, false);
-<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "80217fa07d1149de815b170e7c453e01", async() => {
-=======
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "75c1148ce73f45f3bc2dd18226763d40", async() => {
->>>>>>> 57994c177787c81a9b419ff4a925473a6caa0e11:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.cshtml.g.cs
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "911e8e01d27f41189ed8c4d9fdcec9bb", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
