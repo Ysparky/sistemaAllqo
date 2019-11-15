@@ -10,8 +10,8 @@ using sistemaAllqo.Data;
 namespace sistemaAllqo.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191115160834_Agregada-Migracion-RxM")]
-    partial class AgregadaMigracionRxM
+    [Migration("20191115164402_ReservaxMascotaAgregada")]
+    partial class ReservaxMascotaAgregada
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -368,13 +368,17 @@ namespace sistemaAllqo.Data.Migrations
 
             modelBuilder.Entity("sistemaAllqo.Models.ReservaxMascota", b =>
                 {
-                    b.Property<int>("idReserva");
-
-                    b.Property<int>("idMascota");
+                    b.Property<int>("idresxMas")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("Reserva_ID");
 
-                    b.HasKey("idReserva", "idMascota");
+                    b.Property<int>("idMascota");
+
+                    b.Property<int>("idReserva");
+
+                    b.HasKey("idresxMas");
 
                     b.HasIndex("Reserva_ID");
 

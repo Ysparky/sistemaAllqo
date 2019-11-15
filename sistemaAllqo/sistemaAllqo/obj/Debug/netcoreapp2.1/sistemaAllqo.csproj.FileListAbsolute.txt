@@ -48,3 +48,9 @@ C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\net
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.dll
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.pdb
 C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.csproj.CopyComplete
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\ReservaxMascotas\Create.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\ReservaxMascotas\Delete.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\ReservaxMascotas\Details.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\ReservaxMascotas\Edit.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\ReservaxMascotas\Index.g.cshtml.cs
+C:\Users\Emperatriz\Desktop\ALLQO PROGRA\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.csprojAssemblyReference.cache

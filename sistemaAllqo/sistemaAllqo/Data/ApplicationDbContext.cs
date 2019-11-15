@@ -17,7 +17,6 @@ namespace sistemaAllqo.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Entity<ReservaxMascota>().HasKey(x => new { x.idReserva, x.idMascota });
         }
         public DbSet<sistemaAllqo.Models.Cliente> Cliente { get; set; }
         public DbSet<sistemaAllqo.Models.ComprobantePago> ComprobantePago { get; set; }

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace sistemaAllqo.Data.Migrations
 {
-    public partial class Migracion : Migration
+    public partial class ReservaxMascotaAgregada : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,7 +28,7 @@ namespace sistemaAllqo.Data.Migrations
                     idLugar = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     nombre = table.Column<string>(nullable: true),
-                    agregado = table.Column<float>(nullable: false)
+                    agregado = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -43,7 +43,7 @@ namespace sistemaAllqo.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     categoria = table.Column<string>(nullable: true),
                     descripcion = table.Column<string>(nullable: true),
-                    precio = table.Column<float>(nullable: false)
+                    precio = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -87,7 +87,7 @@ namespace sistemaAllqo.Data.Migrations
                     nombres = table.Column<string>(nullable: true),
                     apellidos = table.Column<string>(nullable: true),
                     dni = table.Column<int>(nullable: false),
-                    numCel = table.Column<int>(nullable: false),
+                    numCel = table.Column<long>(nullable: false),
                     direccion = table.Column<string>(nullable: true),
                     idEspecialidad = table.Column<int>(nullable: false)
                 },
@@ -113,7 +113,7 @@ namespace sistemaAllqo.Data.Migrations
                     direccion = table.Column<string>(nullable: true),
                     dni = table.Column<int>(nullable: false),
                     correo = table.Column<string>(nullable: true),
-                    numCelular = table.Column<int>(nullable: false),
+                    numCelular = table.Column<long>(nullable: false),
                     estado = table.Column<string>(nullable: true),
                     idLugar = table.Column<int>(nullable: false)
                 },
@@ -191,7 +191,7 @@ namespace sistemaAllqo.Data.Migrations
                     idMascota = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     nombre = table.Column<string>(nullable: true),
-                    edad = table.Column<int>(nullable: false),
+                    edad = table.Column<string>(nullable: true),
                     idCliente = table.Column<int>(nullable: false),
                     idRaza = table.Column<int>(nullable: false)
                 },
@@ -209,6 +209,33 @@ namespace sistemaAllqo.Data.Migrations
                         column: x => x.idRaza,
                         principalTable: "Raza",
                         principalColumn: "idRaza",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ReservaxMascota",
+                columns: table => new
+                {
+                    idresxMas = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    idReserva = table.Column<int>(nullable: false),
+                    Reserva_ID = table.Column<int>(nullable: true),
+                    idMascota = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ReservaxMascota", x => x.idresxMas);
+                    table.ForeignKey(
+                        name: "FK_ReservaxMascota_Reserva_Reserva_ID",
+                        column: x => x.Reserva_ID,
+                        principalTable: "Reserva",
+                        principalColumn: "Reserva_ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_ReservaxMascota_Mascota_idMascota",
+                        column: x => x.idMascota,
+                        principalTable: "Mascota",
+                        principalColumn: "idMascota",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -322,6 +349,16 @@ namespace sistemaAllqo.Data.Migrations
                 column: "idTrabajador");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ReservaxMascota_Reserva_ID",
+                table: "ReservaxMascota",
+                column: "Reserva_ID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ReservaxMascota_idMascota",
+                table: "ReservaxMascota",
+                column: "idMascota");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Trabajador_idEspecialidad",
                 table: "Trabajador",
                 column: "idEspecialidad");
@@ -350,25 +387,28 @@ namespace sistemaAllqo.Data.Migrations
                 table: "ComprobantePago");
 
             migrationBuilder.DropTable(
-                name: "Mascota");
-
-            migrationBuilder.DropTable(
-                name: "Reserva");
+                name: "ReservaxMascota");
 
             migrationBuilder.DropTable(
                 name: "Usuario");
 
             migrationBuilder.DropTable(
-                name: "Raza");
+                name: "Reserva");
+
+            migrationBuilder.DropTable(
+                name: "Mascota");
 
             migrationBuilder.DropTable(
                 name: "Trabajador");
 
             migrationBuilder.DropTable(
-                name: "tipoPerro");
+                name: "Raza");
 
             migrationBuilder.DropTable(
                 name: "Especialidad");
+
+            migrationBuilder.DropTable(
+                name: "tipoPerro");
 
             migrationBuilder.DropTable(
                 name: "Lugar");
