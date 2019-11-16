@@ -209,12 +209,20 @@ using sistemaAllqo.Models;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n    \r\n    ");
             EndContext();
             BeginContext(1549, 214, false);
+<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Reservas/Delete.cshtml.g.cs
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2a0b8b952fe04a999b76edac701a9c2f", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "778efda3d8b244aeb4fcd37f222546ec", async() => {
+>>>>>>> 536cae38e7cda5a0261ad12c08001cbcff5681a5:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Reservas/Delete.g.cshtml.cs
                 BeginContext(1575, 10, true);
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(1585, 43, false);
+<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Reservas/Delete.cshtml.g.cs
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "33aa630205944c07930dfd97e811b65a", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "42673b90c5e9471fa53f35c3c1532888", async() => {
+>>>>>>> 536cae38e7cda5a0261ad12c08001cbcff5681a5:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Reservas/Delete.g.cshtml.cs
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -239,7 +247,11 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n        <input type=\"submit\" value=\"Delete\" class=\"btn btn-default\" /> |\r\n        ");
                 EndContext();
                 BeginContext(1712, 38, false);
+<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Reservas/Delete.cshtml.g.cs
                 __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49bb63b03e104047b23c69a0f7c58899", async() => {
+=======
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "061a57f6db894801b4fdea60afbef80c", async() => {
+>>>>>>> 536cae38e7cda5a0261ad12c08001cbcff5681a5:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Reservas/Delete.g.cshtml.cs
                     BeginContext(1734, 12, true);
                     WriteLiteral("Back to List");
                     EndContext();

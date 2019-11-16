@@ -67,7 +67,11 @@ using sistemaAllqo.Models;
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(168, 37, false);
+<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Mascotas/Index.cshtml.g.cs
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "effec8a285604beeb346d4d2908edbde", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eed857f5665d4e40b29141ba6429382f", async() => {
+>>>>>>> 536cae38e7cda5a0261ad12c08001cbcff5681a5:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Mascotas/Index.g.cshtml.cs
                 BeginContext(191, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -197,7 +201,11 @@ using sistemaAllqo.Models;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(1403, 60, false);
+<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Mascotas/Index.cshtml.g.cs
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b50792270a2f4f6b96993e39a83236d7", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37d0be8eef7744d5ab395ff59f385070", async() => {
+>>>>>>> 536cae38e7cda5a0261ad12c08001cbcff5681a5:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Mascotas/Index.g.cshtml.cs
                 BeginContext(1455, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -232,7 +240,11 @@ using sistemaAllqo.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(1483, 66, false);
+<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Mascotas/Index.cshtml.g.cs
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3f244b2047c40ad9714a73738e7df90", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7163b458b9b94e26aed071af08e23acf", async() => {
+>>>>>>> 536cae38e7cda5a0261ad12c08001cbcff5681a5:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Mascotas/Index.g.cshtml.cs
                 BeginContext(1538, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -267,7 +279,11 @@ using sistemaAllqo.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(1569, 64, false);
+<<<<<<< HEAD:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Mascotas/Index.cshtml.g.cs
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6b3277b8ba3f42d9aedadaedf40b250a", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f6e97f28d54d453a87703284ad8bed28", async() => {
+>>>>>>> 536cae38e7cda5a0261ad12c08001cbcff5681a5:sistemaAllqo/sistemaAllqo/obj/Debug/netcoreapp2.1/Razor/Views/Mascotas/Index.g.cshtml.cs
                 BeginContext(1623, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

@@ -21,7 +21,7 @@ namespace sistemaAllqo.Models
         public int dni { get; set; }
         [DisplayName("Correo")]
         public string correo { get; set; }
-        [DisplayName("Número de Celular")]
+        [DisplayName("# Celular")]
         public long numCelular { get; set; }
         [DisplayName("Estado")]
         public string estado { get; set; }
