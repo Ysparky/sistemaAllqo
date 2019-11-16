@@ -30,9 +30,9 @@
                 <span asp-validation-for="estado" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="idMascota" class="control-label"></label>
-                <select asp-for="idMascota" class="form-control" asp-items="ViewBag.idMascota"></select>
-                <span asp-validation-for="idMascota" class="text-danger"></span>
+                <label asp-for="idCliente" class="control-label"></label>
+                <select asp-for="idCliente" class="form-control" asp-items="ViewBag.idCliente"></select>
+                <span asp-validation-for="idCliente" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="idServicio" class="control-label"></label>
@@ -43,6 +43,11 @@
                 <label asp-for="idTrabajador" class="control-label"></label>
                 <select asp-for="idTrabajador" class="form-control" asp-items="ViewBag.idTrabajador"></select>
                 <span asp-validation-for="idTrabajador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idSesion" class="control-label"></label>
+                <select asp-for="idSesion" class="form-control" asp-items="ViewBag.idSesion"></select>
+                <span asp-validation-for="idSesion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />

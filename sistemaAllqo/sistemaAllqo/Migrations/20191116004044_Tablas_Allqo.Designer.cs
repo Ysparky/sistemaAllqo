@@ -10,8 +10,8 @@ using sistemaAllqo.Data;
 namespace sistemaAllqo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191115184425_Entitys")]
-    partial class Entitys
+    [Migration("20191116004044_Tablas_Allqo")]
+    partial class Tablas_Allqo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -309,6 +309,8 @@ namespace sistemaAllqo.Migrations
 
                     b.Property<int>("idRaza");
 
+                    b.Property<int>("idSesion");
+
                     b.Property<string>("nombre");
 
                     b.HasKey("idMascota");
@@ -316,6 +318,8 @@ namespace sistemaAllqo.Migrations
                     b.HasIndex("idCliente");
 
                     b.HasIndex("idRaza");
+
+                    b.HasIndex("idSesion");
 
                     b.ToTable("Mascota");
                 });
@@ -343,23 +347,31 @@ namespace sistemaAllqo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("MascotaidMascota");
+
                     b.Property<string>("estado");
 
                     b.Property<DateTime>("fechaReservada");
 
                     b.Property<DateTime>("fechaSesion");
 
-                    b.Property<int>("idMascota");
+                    b.Property<int>("idCliente");
 
                     b.Property<int>("idServicio");
+
+                    b.Property<int>("idSesion");
 
                     b.Property<int>("idTrabajador");
 
                     b.HasKey("idReserva");
 
-                    b.HasIndex("idMascota");
+                    b.HasIndex("MascotaidMascota");
+
+                    b.HasIndex("idCliente");
 
                     b.HasIndex("idServicio");
+
+                    b.HasIndex("idSesion");
 
                     b.HasIndex("idTrabajador");
 
@@ -383,19 +395,34 @@ namespace sistemaAllqo.Migrations
                     b.ToTable("Servicio");
                 });
 
-            modelBuilder.Entity("sistemaAllqo.Models.tipoPerro", b =>
+            modelBuilder.Entity("sistemaAllqo.Models.Sesion", b =>
+                {
+                    b.Property<int>("idSesion")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("estado");
+
+                    b.Property<int>("numMascotas");
+
+                    b.HasKey("idSesion");
+
+                    b.ToTable("Sesion");
+                });
+
+            modelBuilder.Entity("sistemaAllqo.Models.TipoPerro", b =>
                 {
                     b.Property<int>("idTipo")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<float>("agregado");
+                    b.Property<decimal>("agregado");
 
                     b.Property<string>("nombre");
 
                     b.HasKey("idTipo");
 
-                    b.ToTable("tipoPerro");
+                    b.ToTable("TipoPerro");
                 });
 
             modelBuilder.Entity("sistemaAllqo.Models.Trabajador", b =>
@@ -527,26 +554,40 @@ namespace sistemaAllqo.Migrations
                         .WithMany("mascotas")
                         .HasForeignKey("idRaza")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("sistemaAllqo.Models.Sesion", "sesion")
+                        .WithMany("mascotas")
+                        .HasForeignKey("idSesion")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("sistemaAllqo.Models.Raza", b =>
                 {
-                    b.HasOne("sistemaAllqo.Models.tipoPerro", "tipoperro")
-                        .WithMany("razas")
+                    b.HasOne("sistemaAllqo.Models.TipoPerro", "tipoperro")
+                        .WithMany()
                         .HasForeignKey("idTipo")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("sistemaAllqo.Models.Reserva", b =>
                 {
-                    b.HasOne("sistemaAllqo.Models.Mascota", "mascota")
+                    b.HasOne("sistemaAllqo.Models.Mascota")
                         .WithMany("reservas")
-                        .HasForeignKey("idMascota")
+                        .HasForeignKey("MascotaidMascota");
+
+                    b.HasOne("sistemaAllqo.Models.Cliente", "cliente")
+                        .WithMany()
+                        .HasForeignKey("idCliente")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("sistemaAllqo.Models.Servicio", "servicio")
                         .WithMany("reservas")
                         .HasForeignKey("idServicio")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("sistemaAllqo.Models.Sesion", "sesion")
+                        .WithMany("reservas")
+                        .HasForeignKey("idSesion")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("sistemaAllqo.Models.Trabajador", "trabajador")

@@ -10,7 +10,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table" id="tabla">
+<table class="table">
     <thead>
         <tr>
             <th>
@@ -23,13 +23,16 @@
                 @Html.DisplayNameFor(model => model.estado)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.mascota)
+                @Html.DisplayNameFor(model => model.cliente)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.servicio)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.trabajador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sesion)
             </th>
             <th></th>
         </tr>
@@ -47,14 +50,16 @@
                 @Html.DisplayFor(modelItem => item.estado)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.mascota.nombre)
+                @Html.DisplayFor(modelItem => item.cliente.idCliente)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.servicio.categoria)
+                @Html.DisplayFor(modelItem => item.servicio.idServicio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.trabajador.apellidos)
-                @Html.DisplayFor(modelItem => item.trabajador.nombres)
+                @Html.DisplayFor(modelItem => item.trabajador.idTrabajador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sesion.idSesion)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.idReserva">Edit</a> |

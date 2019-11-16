@@ -12,7 +12,7 @@ namespace sistemaAllqo.Models
         public int idSesion { get; set; }
         public int numMascotas { get; set; }
         public string estado { get; set; }
-        public int idReserva { get; set; }
-        public Reserva reserva { get; set; }
+        public ICollection<Mascota> mascotas { get; set; }
+        public ICollection<Reserva> reservas { get; set; }
     }
 }

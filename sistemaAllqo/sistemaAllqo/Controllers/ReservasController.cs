@@ -22,7 +22,7 @@ namespace sistemaAllqo.Controllers
         // GET: Reservas
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Reserva.Include(r => r.mascota).Include(r => r.servicio).Include(r => r.trabajador);
+            var applicationDbContext = _context.Reserva.Include(r => r.cliente).Include(r => r.servicio).Include(r => r.sesion).Include(r => r.trabajador);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,8 +35,9 @@ namespace sistemaAllqo.Controllers
             }
 
             var reserva = await _context.Reserva
-                .Include(r => r.mascota)
+                .Include(r => r.cliente)
                 .Include(r => r.servicio)
+                .Include(r => r.sesion)
                 .Include(r => r.trabajador)
                 .FirstOrDefaultAsync(m => m.idReserva == id);
             if (reserva == null)
@@ -50,9 +51,10 @@ namespace sistemaAllqo.Controllers
         // GET: Reservas/Create
         public IActionResult Create()
         {
-            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "nombre");
-            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria");
-            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "nombres");
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente");
+            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio");
+            ViewData["idSesion"] = new SelectList(_context.Sesion, "idSesion", "idSesion");
+            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador");
             return View();
         }
 
@@ -61,22 +63,18 @@ namespace sistemaAllqo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("idReserva,fechaReservada,fechaSesion,estado,idMascota,idServicio,idTrabajador")] Reserva reserva)
+        public async Task<IActionResult> Create([Bind("idReserva,fechaReservada,fechaSesion,estado,idCliente,idServicio,idTrabajador,idSesion")] Reserva reserva)
         {
-            reserva.fechaReservada = DateTime.Now;
-            if (reserva.fechaSesion < reserva.fechaReservada)
-            {
-                ModelState.AddModelError("","La fecha ingresada ha caducado, ingrese una fecha válida");
-            }
-            else if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Add(reserva);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "nombre", reserva.idMascota);
-            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria", reserva.idServicio);
-            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "apellidos", reserva.idTrabajador);
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", reserva.idCliente);
+            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio", reserva.idServicio);
+            ViewData["idSesion"] = new SelectList(_context.Sesion, "idSesion", "idSesion", reserva.idSesion);
+            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador", reserva.idTrabajador);
             return View(reserva);
         }
 
@@ -93,9 +91,10 @@ namespace sistemaAllqo.Controllers
             {
                 return NotFound();
             }
-            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "nombre", reserva.idMascota);
-            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria", reserva.idServicio);
-            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "apellidos", reserva.idTrabajador);
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", reserva.idCliente);
+            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio", reserva.idServicio);
+            ViewData["idSesion"] = new SelectList(_context.Sesion, "idSesion", "idSesion", reserva.idSesion);
+            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador", reserva.idTrabajador);
             return View(reserva);
         }
 
@@ -104,7 +103,7 @@ namespace sistemaAllqo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("idReserva,fechaReservada,fechaSesion,estado,idMascota,idServicio,idTrabajador")] Reserva reserva)
+        public async Task<IActionResult> Edit(int id, [Bind("idReserva,fechaReservada,fechaSesion,estado,idCliente,idServicio,idTrabajador,idSesion")] Reserva reserva)
         {
             if (id != reserva.idReserva)
             {
@@ -131,9 +130,10 @@ namespace sistemaAllqo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "nombre", reserva.idMascota);
-            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria", reserva.idServicio);
-            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "apellidos", reserva.idTrabajador);
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", reserva.idCliente);
+            ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "idServicio", reserva.idServicio);
+            ViewData["idSesion"] = new SelectList(_context.Sesion, "idSesion", "idSesion", reserva.idSesion);
+            ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "idTrabajador", reserva.idTrabajador);
             return View(reserva);
         }
 
@@ -146,8 +146,9 @@ namespace sistemaAllqo.Controllers
             }
 
             var reserva = await _context.Reserva
-                .Include(r => r.mascota)
+                .Include(r => r.cliente)
                 .Include(r => r.servicio)
+                .Include(r => r.sesion)
                 .Include(r => r.trabajador)
                 .FirstOrDefaultAsync(m => m.idReserva == id);
             if (reserva == null)

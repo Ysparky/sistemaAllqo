@@ -30,23 +30,28 @@
             @Html.DisplayFor(model => model.estado)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.mascota)
+            @Html.DisplayNameFor(model => model.cliente)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.mascota.nombre)
+            @Html.DisplayFor(model => model.cliente.idCliente)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.servicio)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.servicio.categoria)
+            @Html.DisplayFor(model => model.servicio.idServicio)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.trabajador)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.trabajador.apellidos)
-            @Html.DisplayFor(model => model.trabajador.nombres)
+            @Html.DisplayFor(model => model.trabajador.idTrabajador)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sesion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sesion.idSesion)
         </dd>
     </dl>
 </div>

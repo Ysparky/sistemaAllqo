@@ -20,6 +20,10 @@
     <Compile Remove="Data\Migrations\20191115181428_Tablav1.Designer.cs" />
     <Compile Remove="Data\Migrations\20191115182105_Tablav1.cs" />
     <Compile Remove="Data\Migrations\20191115182105_Tablav1.Designer.cs" />
+    <Compile Remove="Migrations\20191115184425_Entitys.cs" />
+    <Compile Remove="Migrations\20191115184425_Entitys.Designer.cs" />
+    <Compile Remove="Migrations\20191116002808_EF.cs" />
+    <Compile Remove="Migrations\20191116002808_EF.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

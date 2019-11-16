@@ -10,7 +10,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table" id="tabla">
+<table class="table">
     <thead>
         <tr>
             <th>
@@ -25,6 +25,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.raza)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sesion)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -38,11 +41,13 @@
                 @Html.DisplayFor(modelItem => item.edad)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.cliente.apellidos)
-                @Html.DisplayFor(modelItem => item.cliente.nombres)
+                @Html.DisplayFor(modelItem => item.cliente.idCliente)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.raza.nombre)
+                @Html.DisplayFor(modelItem => item.raza.idRaza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sesion.idSesion)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.idMascota">Edit</a> |

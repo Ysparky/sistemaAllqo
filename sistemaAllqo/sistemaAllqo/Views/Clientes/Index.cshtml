@@ -10,31 +10,31 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table table-hover table-lg table-bordered table-responsive text-center" id="tabla">
+<table class="table">
     <thead>
-        <tr >
-            <th class="text-center">
+        <tr>
+            <th>
                 @Html.DisplayNameFor(model => model.nombres)
             </th>
-            <th class="text-center">
+            <th>
                 @Html.DisplayNameFor(model => model.apellidos)
             </th>
-            <th class="text-center">
+            <th>
                 @Html.DisplayNameFor(model => model.direccion)
             </th>
-            <th class="text-center">
+            <th>
                 @Html.DisplayNameFor(model => model.dni)
             </th>
-            <th class="text-center">
+            <th>
                 @Html.DisplayNameFor(model => model.correo)
             </th>
-            <th class="text-center">
+            <th>
                 @Html.DisplayNameFor(model => model.numCelular)
             </th>
-            <th class="text-center">
+            <th>
                 @Html.DisplayNameFor(model => model.estado)
             </th>
-            <th class="text-center">
+            <th>
                 @Html.DisplayNameFor(model => model.lugar)
             </th>
             <th></th>
@@ -64,9 +64,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.estado)
             </td>
-
             <td>
-                @Html.DisplayFor(modelItem => item.lugar.nombre)
+                @Html.DisplayFor(modelItem => item.lugar.idLugar)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.idCliente">Edit</a> |
