@@ -22,7 +22,7 @@ namespace sistemaAllqo.Controllers
         // GET: Mascotas
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Mascota.Include(m => m.cliente).Include(m => m.raza);
+            var applicationDbContext = _context.Mascota.Include(m => m.cliente).Include(m => m.raza).Include(m => m.sesion);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -37,6 +37,7 @@ namespace sistemaAllqo.Controllers
             var mascota = await _context.Mascota
                 .Include(m => m.cliente)
                 .Include(m => m.raza)
+                .Include(m => m.sesion)
                 .FirstOrDefaultAsync(m => m.idMascota == id);
             if (mascota == null)
             {
@@ -49,8 +50,9 @@ namespace sistemaAllqo.Controllers
         // GET: Mascotas/Create
         public IActionResult Create()
         {
-            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "apellidos");
-            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "nombre");
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente");
+            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "idRaza");
+            ViewData["idSesion"] = new SelectList(_context.Sesion, "idSesion", "idSesion");
             return View();
         }
 
@@ -59,7 +61,7 @@ namespace sistemaAllqo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("idMascota,nombre,edad,idCliente,idRaza")] Mascota mascota)
+        public async Task<IActionResult> Create([Bind("idMascota,nombre,edad,idCliente,idRaza,idSesion")] Mascota mascota)
         {
             if (ModelState.IsValid)
             {
@@ -67,8 +69,9 @@ namespace sistemaAllqo.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "apellidos", mascota.idCliente);
-            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "nombre", mascota.idRaza);
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", mascota.idCliente);
+            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "idRaza", mascota.idRaza);
+            ViewData["idSesion"] = new SelectList(_context.Sesion, "idSesion", "idSesion", mascota.idSesion);
             return View(mascota);
         }
 
@@ -85,8 +88,9 @@ namespace sistemaAllqo.Controllers
             {
                 return NotFound();
             }
-            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "apellidos", mascota.idCliente);
-            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "nombre", mascota.idRaza);
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", mascota.idCliente);
+            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "idRaza", mascota.idRaza);
+            ViewData["idSesion"] = new SelectList(_context.Sesion, "idSesion", "idSesion", mascota.idSesion);
             return View(mascota);
         }
 
@@ -95,7 +99,7 @@ namespace sistemaAllqo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("idMascota,nombre,edad,idCliente,idRaza")] Mascota mascota)
+        public async Task<IActionResult> Edit(int id, [Bind("idMascota,nombre,edad,idCliente,idRaza,idSesion")] Mascota mascota)
         {
             if (id != mascota.idMascota)
             {
@@ -124,6 +128,7 @@ namespace sistemaAllqo.Controllers
             }
             ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", mascota.idCliente);
             ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "idRaza", mascota.idRaza);
+            ViewData["idSesion"] = new SelectList(_context.Sesion, "idSesion", "idSesion", mascota.idSesion);
             return View(mascota);
         }
 
@@ -138,6 +143,7 @@ namespace sistemaAllqo.Controllers
             var mascota = await _context.Mascota
                 .Include(m => m.cliente)
                 .Include(m => m.raza)
+                .Include(m => m.sesion)
                 .FirstOrDefaultAsync(m => m.idMascota == id);
             if (mascota == null)
             {

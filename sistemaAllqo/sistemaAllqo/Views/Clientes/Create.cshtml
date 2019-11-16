@@ -14,14 +14,14 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="nombres" class="control-label"></label>
-                <input asp-for="nombres" class="form-control" />
-                <span asp-validation-for="nombres" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="apellidos" class="control-label"></label>
                 <input asp-for="apellidos" class="form-control" />
                 <span asp-validation-for="apellidos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nombres" class="control-label"></label>
+                <input asp-for="nombres" class="form-control" />
+                <span asp-validation-for="nombres" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="direccion" class="control-label"></label>
@@ -43,14 +43,14 @@
                 <input asp-for="numCelular" class="form-control" />
                 <span asp-validation-for="numCelular" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" hidden>
                 <label asp-for="estado" class="control-label"></label>
-                <input asp-for="estado" class="form-control" />
+                <input asp-for="estado" class="form-control" value="Creado" />
                 <span asp-validation-for="estado" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="idLugar" class="control-label"></label>
-                <select asp-for="idLugar" class ="form-control" asp-items="ViewBag.idLugar"></select>
+                <select asp-for="idLugar" class="form-control" asp-items="ViewBag.idLugar"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
