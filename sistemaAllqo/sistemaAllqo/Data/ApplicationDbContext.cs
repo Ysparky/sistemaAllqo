@@ -28,6 +28,7 @@ namespace sistemaAllqo.Data
         public DbSet<sistemaAllqo.Models.Reserva> Reserva { get; set; }
         public DbSet<sistemaAllqo.Models.Servicio> Servicio { get; set; }
         public DbSet<sistemaAllqo.Models.Sesion> Sesion { get; set; }
+        public DbSet<sistemaAllqo.Models.SesionxMascota> SesionxMascota { get; set; }
         public DbSet<sistemaAllqo.Models.TipoPerro> TipoPerro { get; set; }
         public DbSet<sistemaAllqo.Models.Trabajador> Trabajador { get; set; }
         public DbSet<sistemaAllqo.Models.Usuario> Usuario { get; set; }

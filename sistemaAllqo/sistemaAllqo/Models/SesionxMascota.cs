@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace sistemaAllqo.Models
 {
-    public class Sesion
+    public class SesionxMascota
     {
         [Key]
+        public int idSesionxm { get; set; }
+        public int idMascota { get; set; }
+        public Mascota mascota { get; set; }
         public int idSesion { get; set; }
-        public int numMascotas { get; set; }
-        public string estado { get; set; }
-        public ICollection<Reserva> reservas { get; set; }
-        public ICollection<SesionxMascota> sesionxMascotas { get; set; }
+        public Sesion sesion { get; set; }
     }
 }

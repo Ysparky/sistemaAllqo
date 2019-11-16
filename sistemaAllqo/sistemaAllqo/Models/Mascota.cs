@@ -24,9 +24,6 @@ namespace sistemaAllqo.Models
         public int idRaza { get; set; }
         [DisplayName("Raza")]
         public Raza raza { get; set; }
-        public int? idSesion { get; set; }
-        [ForeignKey("idSesion")]
-        public virtual Sesion sesion { get; set; }
-        public ICollection<Reserva> reservas { get; set; }
+        public ICollection<SesionxMascota> sesionxMascotas { get; set; }
     }
 }

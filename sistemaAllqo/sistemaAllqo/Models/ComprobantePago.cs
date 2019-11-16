@@ -13,8 +13,6 @@ namespace sistemaAllqo.Models
         public DateTime fecha { get; set; }
         public string comentario { get; set; }
         public string estadoPago { get; set; }
-        public int numDetalle { get; set; }
-        public DetalleComprobante detalle { get; set; }
         public int idCliente { get; set; } 
         public Cliente cliente { get; set; }
         public ICollection<DetalleComprobante> detalles { get; set; }

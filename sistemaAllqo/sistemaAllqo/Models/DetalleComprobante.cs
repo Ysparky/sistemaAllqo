@@ -15,6 +15,8 @@ namespace sistemaAllqo.Models
         public float subtotal { get; set; }
         public float total { get; set; }
         public float importe { get; set; }
+        public int numComprobante { get; set; }
+        public ComprobantePago comprobante { get; set; }
         public int idServicio { get; set; }
         public Servicio servicio { get; set; }
     }

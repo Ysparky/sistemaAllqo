@@ -30,6 +30,16 @@
     <Compile Remove="Migrations\20191116011638_nullableSesion3.Designer.cs" />
     <Compile Remove="Migrations\20191116011858_Tablas-Allqo.cs" />
     <Compile Remove="Migrations\20191116011858_Tablas-Allqo.Designer.cs" />
+    <Compile Remove="Migrations\20191116012203_Tablas_Allqo.cs" />
+    <Compile Remove="Migrations\20191116012203_Tablas_Allqo.Designer.cs" />
+    <Compile Remove="Migrations\20191116022747_aa.cs" />
+    <Compile Remove="Migrations\20191116022747_aa.Designer.cs" />
+    <Compile Remove="Migrations\20191116022943_bd.cs" />
+    <Compile Remove="Migrations\20191116022943_bd.Designer.cs" />
+    <Compile Remove="Migrations\20191116023036_bd.cs" />
+    <Compile Remove="Migrations\20191116023036_bd.Designer.cs" />
+    <Compile Remove="Migrations\20191116023907_bd.cs" />
+    <Compile Remove="Migrations\20191116023907_bd.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

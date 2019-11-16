@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace sistemaAllqo.Migrations
 {
-    public partial class Tablas_Allqo : Migration
+    public partial class BD_ALLQO : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -163,38 +163,25 @@ namespace sistemaAllqo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Mascota",
+                name: "ComprobantePago",
                 columns: table => new
                 {
-                    idMascota = table.Column<int>(nullable: false)
+                    numComprobante = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    nombre = table.Column<string>(nullable: true),
-                    edad = table.Column<string>(nullable: true),
-                    idCliente = table.Column<int>(nullable: false),
-                    idRaza = table.Column<int>(nullable: false),
-                    idSesion = table.Column<int>(nullable: true)
+                    fecha = table.Column<DateTime>(nullable: false),
+                    comentario = table.Column<string>(nullable: true),
+                    estadoPago = table.Column<string>(nullable: true),
+                    idCliente = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Mascota", x => x.idMascota);
+                    table.PrimaryKey("PK_ComprobantePago", x => x.numComprobante);
                     table.ForeignKey(
-                        name: "FK_Mascota_Cliente_idCliente",
+                        name: "FK_ComprobantePago_Cliente_idCliente",
                         column: x => x.idCliente,
                         principalTable: "Cliente",
                         principalColumn: "idCliente",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Mascota_Raza_idRaza",
-                        column: x => x.idRaza,
-                        principalTable: "Raza",
-                        principalColumn: "idRaza",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Mascota_Sesion_idSesion",
-                        column: x => x.idSesion,
-                        principalTable: "Sesion",
-                        principalColumn: "idSesion",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -209,18 +196,11 @@ namespace sistemaAllqo.Migrations
                     idCliente = table.Column<int>(nullable: false),
                     idServicio = table.Column<int>(nullable: false),
                     idTrabajador = table.Column<int>(nullable: false),
-                    idSesion = table.Column<int>(nullable: true),
-                    MascotaidMascota = table.Column<int>(nullable: true)
+                    idSesion = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reserva", x => x.idReserva);
-                    table.ForeignKey(
-                        name: "FK_Reserva_Mascota_MascotaidMascota",
-                        column: x => x.MascotaidMascota,
-                        principalTable: "Mascota",
-                        principalColumn: "idMascota",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Reserva_Cliente_idCliente",
                         column: x => x.idCliente,
@@ -248,25 +228,30 @@ namespace sistemaAllqo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ComprobantePago",
+                name: "Mascota",
                 columns: table => new
                 {
-                    numComprobante = table.Column<int>(nullable: false)
+                    idMascota = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    fecha = table.Column<DateTime>(nullable: false),
-                    comentario = table.Column<string>(nullable: true),
-                    estadoPago = table.Column<string>(nullable: true),
-                    numDetalle = table.Column<int>(nullable: false),
-                    idCliente = table.Column<int>(nullable: false)
+                    nombre = table.Column<string>(nullable: true),
+                    edad = table.Column<string>(nullable: true),
+                    idCliente = table.Column<int>(nullable: false),
+                    idRaza = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ComprobantePago", x => x.numComprobante);
+                    table.PrimaryKey("PK_Mascota", x => x.idMascota);
                     table.ForeignKey(
-                        name: "FK_ComprobantePago_Cliente_idCliente",
+                        name: "FK_Mascota_Cliente_idCliente",
                         column: x => x.idCliente,
                         principalTable: "Cliente",
                         principalColumn: "idCliente",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Mascota_Raza_idRaza",
+                        column: x => x.idRaza,
+                        principalTable: "Raza",
+                        principalColumn: "idRaza",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -281,23 +266,49 @@ namespace sistemaAllqo.Migrations
                     subtotal = table.Column<float>(nullable: false),
                     total = table.Column<float>(nullable: false),
                     importe = table.Column<float>(nullable: false),
-                    idServicio = table.Column<int>(nullable: false),
-                    ComprobantePagonumComprobante = table.Column<int>(nullable: true)
+                    numComprobante = table.Column<int>(nullable: false),
+                    idServicio = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DetalleComprobante", x => x.numDetalle);
                     table.ForeignKey(
-                        name: "FK_DetalleComprobante_ComprobantePago_ComprobantePagonumComprobante",
-                        column: x => x.ComprobantePagonumComprobante,
-                        principalTable: "ComprobantePago",
-                        principalColumn: "numComprobante",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
                         name: "FK_DetalleComprobante_Servicio_idServicio",
                         column: x => x.idServicio,
                         principalTable: "Servicio",
                         principalColumn: "idServicio",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_DetalleComprobante_ComprobantePago_numComprobante",
+                        column: x => x.numComprobante,
+                        principalTable: "ComprobantePago",
+                        principalColumn: "numComprobante",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SesionxMascota",
+                columns: table => new
+                {
+                    idSesionxm = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    idMascota = table.Column<int>(nullable: false),
+                    idSesion = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SesionxMascota", x => x.idSesionxm);
+                    table.ForeignKey(
+                        name: "FK_SesionxMascota_Mascota_idMascota",
+                        column: x => x.idMascota,
+                        principalTable: "Mascota",
+                        principalColumn: "idMascota",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SesionxMascota_Sesion_idSesion",
+                        column: x => x.idSesion,
+                        principalTable: "Sesion",
+                        principalColumn: "idSesion",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -312,19 +323,14 @@ namespace sistemaAllqo.Migrations
                 column: "idCliente");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ComprobantePago_numDetalle",
-                table: "ComprobantePago",
-                column: "numDetalle");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DetalleComprobante_ComprobantePagonumComprobante",
-                table: "DetalleComprobante",
-                column: "ComprobantePagonumComprobante");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_DetalleComprobante_idServicio",
                 table: "DetalleComprobante",
                 column: "idServicio");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DetalleComprobante_numComprobante",
+                table: "DetalleComprobante",
+                column: "numComprobante");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Mascota_idCliente",
@@ -337,19 +343,9 @@ namespace sistemaAllqo.Migrations
                 column: "idRaza");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Mascota_idSesion",
-                table: "Mascota",
-                column: "idSesion");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Raza_idTipo",
                 table: "Raza",
                 column: "idTipo");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Reserva_MascotaidMascota",
-                table: "Reserva",
-                column: "MascotaidMascota");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reserva_idCliente",
@@ -372,47 +368,46 @@ namespace sistemaAllqo.Migrations
                 column: "idTrabajador");
 
             migrationBuilder.CreateIndex(
+                name: "IX_SesionxMascota_idMascota",
+                table: "SesionxMascota",
+                column: "idMascota");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SesionxMascota_idSesion",
+                table: "SesionxMascota",
+                column: "idSesion");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Trabajador_idEspecialidad",
                 table: "Trabajador",
                 column: "idEspecialidad");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_ComprobantePago_DetalleComprobante_numDetalle",
-                table: "ComprobantePago",
-                column: "numDetalle",
-                principalTable: "DetalleComprobante",
-                principalColumn: "numDetalle",
-                onDelete: ReferentialAction.Cascade);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Cliente_Lugar_idLugar",
-                table: "Cliente");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_ComprobantePago_Cliente_idCliente",
-                table: "ComprobantePago");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_ComprobantePago_DetalleComprobante_numDetalle",
-                table: "ComprobantePago");
+            migrationBuilder.DropTable(
+                name: "DetalleComprobante");
 
             migrationBuilder.DropTable(
                 name: "Reserva");
 
             migrationBuilder.DropTable(
+                name: "SesionxMascota");
+
+            migrationBuilder.DropTable(
                 name: "Usuario");
 
             migrationBuilder.DropTable(
-                name: "Mascota");
+                name: "ComprobantePago");
+
+            migrationBuilder.DropTable(
+                name: "Servicio");
 
             migrationBuilder.DropTable(
                 name: "Trabajador");
 
             migrationBuilder.DropTable(
-                name: "Raza");
+                name: "Mascota");
 
             migrationBuilder.DropTable(
                 name: "Sesion");
@@ -421,22 +416,16 @@ namespace sistemaAllqo.Migrations
                 name: "Especialidad");
 
             migrationBuilder.DropTable(
-                name: "TipoPerro");
+                name: "Cliente");
+
+            migrationBuilder.DropTable(
+                name: "Raza");
 
             migrationBuilder.DropTable(
                 name: "Lugar");
 
             migrationBuilder.DropTable(
-                name: "Cliente");
-
-            migrationBuilder.DropTable(
-                name: "DetalleComprobante");
-
-            migrationBuilder.DropTable(
-                name: "ComprobantePago");
-
-            migrationBuilder.DropTable(
-                name: "Servicio");
+                name: "TipoPerro");
         }
     }
 }

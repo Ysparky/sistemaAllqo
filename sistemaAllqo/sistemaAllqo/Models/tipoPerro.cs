@@ -12,5 +12,6 @@ namespace sistemaAllqo.Models
         public int idTipo { get; set; }
         public string nombre{ get; set; }
         public decimal agregado{ get; set; }
+        public ICollection<Raza> razas { get; set; }
     }
 }

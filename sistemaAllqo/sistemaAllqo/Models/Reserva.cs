@@ -31,7 +31,6 @@ namespace sistemaAllqo.Models
         [DisplayName("Trabajador")]
         public Trabajador trabajador { get; set; }
         public int? idSesion { get; set; }
-        [ForeignKey("idSesion")]
-        public Sesion sesion { get; set; }
+        public Sesion sesion { get; set; } 
     }
 }

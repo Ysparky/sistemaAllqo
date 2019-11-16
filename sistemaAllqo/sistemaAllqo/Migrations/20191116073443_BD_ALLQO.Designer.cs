@@ -10,8 +10,8 @@ using sistemaAllqo.Data;
 namespace sistemaAllqo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191116012203_Tablas_Allqo")]
-    partial class Tablas_Allqo
+    [Migration("20191116073443_BD_ALLQO")]
+    partial class BD_ALLQO
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -229,13 +229,9 @@ namespace sistemaAllqo.Migrations
 
                     b.Property<int>("idCliente");
 
-                    b.Property<int>("numDetalle");
-
                     b.HasKey("numComprobante");
 
                     b.HasIndex("idCliente");
-
-                    b.HasIndex("numDetalle");
 
                     b.ToTable("ComprobantePago");
                 });
@@ -246,13 +242,13 @@ namespace sistemaAllqo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ComprobantePagonumComprobante");
-
                     b.Property<int>("cantidad");
 
                     b.Property<int>("idServicio");
 
                     b.Property<float>("importe");
+
+                    b.Property<int>("numComprobante");
 
                     b.Property<float>("precioUnit");
 
@@ -262,9 +258,9 @@ namespace sistemaAllqo.Migrations
 
                     b.HasKey("numDetalle");
 
-                    b.HasIndex("ComprobantePagonumComprobante");
-
                     b.HasIndex("idServicio");
+
+                    b.HasIndex("numComprobante");
 
                     b.ToTable("DetalleComprobante");
                 });
@@ -309,8 +305,6 @@ namespace sistemaAllqo.Migrations
 
                     b.Property<int>("idRaza");
 
-                    b.Property<int?>("idSesion");
-
                     b.Property<string>("nombre");
 
                     b.HasKey("idMascota");
@@ -318,8 +312,6 @@ namespace sistemaAllqo.Migrations
                     b.HasIndex("idCliente");
 
                     b.HasIndex("idRaza");
-
-                    b.HasIndex("idSesion");
 
                     b.ToTable("Mascota");
                 });
@@ -347,8 +339,6 @@ namespace sistemaAllqo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("MascotaidMascota");
-
                     b.Property<string>("estado");
 
                     b.Property<DateTime>("fechaReservada");
@@ -364,8 +354,6 @@ namespace sistemaAllqo.Migrations
                     b.Property<int>("idTrabajador");
 
                     b.HasKey("idReserva");
-
-                    b.HasIndex("MascotaidMascota");
 
                     b.HasIndex("idCliente");
 
@@ -408,6 +396,25 @@ namespace sistemaAllqo.Migrations
                     b.HasKey("idSesion");
 
                     b.ToTable("Sesion");
+                });
+
+            modelBuilder.Entity("sistemaAllqo.Models.SesionxMascota", b =>
+                {
+                    b.Property<int>("idSesionxm")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("idMascota");
+
+                    b.Property<int>("idSesion");
+
+                    b.HasKey("idSesionxm");
+
+                    b.HasIndex("idMascota");
+
+                    b.HasIndex("idSesion");
+
+                    b.ToTable("SesionxMascota");
                 });
 
             modelBuilder.Entity("sistemaAllqo.Models.TipoPerro", b =>
@@ -524,22 +531,18 @@ namespace sistemaAllqo.Migrations
                         .WithMany("comprobantes")
                         .HasForeignKey("idCliente")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("sistemaAllqo.Models.DetalleComprobante", "detalle")
-                        .WithMany()
-                        .HasForeignKey("numDetalle")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("sistemaAllqo.Models.DetalleComprobante", b =>
                 {
-                    b.HasOne("sistemaAllqo.Models.ComprobantePago")
-                        .WithMany("detalles")
-                        .HasForeignKey("ComprobantePagonumComprobante");
-
                     b.HasOne("sistemaAllqo.Models.Servicio", "servicio")
                         .WithMany("detalles")
                         .HasForeignKey("idServicio")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("sistemaAllqo.Models.ComprobantePago", "comprobante")
+                        .WithMany("detalles")
+                        .HasForeignKey("numComprobante")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -554,26 +557,18 @@ namespace sistemaAllqo.Migrations
                         .WithMany("mascotas")
                         .HasForeignKey("idRaza")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("sistemaAllqo.Models.Sesion", "sesion")
-                        .WithMany("mascotas")
-                        .HasForeignKey("idSesion");
                 });
 
             modelBuilder.Entity("sistemaAllqo.Models.Raza", b =>
                 {
                     b.HasOne("sistemaAllqo.Models.TipoPerro", "tipoperro")
-                        .WithMany()
+                        .WithMany("razas")
                         .HasForeignKey("idTipo")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("sistemaAllqo.Models.Reserva", b =>
                 {
-                    b.HasOne("sistemaAllqo.Models.Mascota")
-                        .WithMany("reservas")
-                        .HasForeignKey("MascotaidMascota");
-
                     b.HasOne("sistemaAllqo.Models.Cliente", "cliente")
                         .WithMany()
                         .HasForeignKey("idCliente")
@@ -591,6 +586,19 @@ namespace sistemaAllqo.Migrations
                     b.HasOne("sistemaAllqo.Models.Trabajador", "trabajador")
                         .WithMany("reservas")
                         .HasForeignKey("idTrabajador")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("sistemaAllqo.Models.SesionxMascota", b =>
+                {
+                    b.HasOne("sistemaAllqo.Models.Mascota", "mascota")
+                        .WithMany("sesionxMascotas")
+                        .HasForeignKey("idMascota")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("sistemaAllqo.Models.Sesion", "sesion")
+                        .WithMany("sesionxMascotas")
+                        .HasForeignKey("idSesion")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
