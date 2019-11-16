@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -29,7 +30,8 @@ namespace sistemaAllqo.Models
         public int idTrabajador { get; set; }
         [DisplayName("Trabajador")]
         public Trabajador trabajador { get; set; }
-        public int idSesion { get; set; }
+        public int? idSesion { get; set; }
+        [ForeignKey("idSesion")]
         public Sesion sesion { get; set; }
     }
 }

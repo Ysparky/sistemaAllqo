@@ -10,7 +10,7 @@ using sistemaAllqo.Data;
 namespace sistemaAllqo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191116004044_Tablas_Allqo")]
+    [Migration("20191116012203_Tablas_Allqo")]
     partial class Tablas_Allqo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -309,7 +309,7 @@ namespace sistemaAllqo.Migrations
 
                     b.Property<int>("idRaza");
 
-                    b.Property<int>("idSesion");
+                    b.Property<int?>("idSesion");
 
                     b.Property<string>("nombre");
 
@@ -359,7 +359,7 @@ namespace sistemaAllqo.Migrations
 
                     b.Property<int>("idServicio");
 
-                    b.Property<int>("idSesion");
+                    b.Property<int?>("idSesion");
 
                     b.Property<int>("idTrabajador");
 
@@ -557,8 +557,7 @@ namespace sistemaAllqo.Migrations
 
                     b.HasOne("sistemaAllqo.Models.Sesion", "sesion")
                         .WithMany("mascotas")
-                        .HasForeignKey("idSesion")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("idSesion");
                 });
 
             modelBuilder.Entity("sistemaAllqo.Models.Raza", b =>
@@ -587,8 +586,7 @@ namespace sistemaAllqo.Migrations
 
                     b.HasOne("sistemaAllqo.Models.Sesion", "sesion")
                         .WithMany("reservas")
-                        .HasForeignKey("idSesion")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("idSesion");
 
                     b.HasOne("sistemaAllqo.Models.Trabajador", "trabajador")
                         .WithMany("reservas")

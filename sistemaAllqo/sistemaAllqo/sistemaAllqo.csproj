@@ -24,6 +24,12 @@
     <Compile Remove="Migrations\20191115184425_Entitys.Designer.cs" />
     <Compile Remove="Migrations\20191116002808_EF.cs" />
     <Compile Remove="Migrations\20191116002808_EF.Designer.cs" />
+    <Compile Remove="Migrations\20191116004044_Tablas_Allqo.cs" />
+    <Compile Remove="Migrations\20191116004044_Tablas_Allqo.Designer.cs" />
+    <Compile Remove="Migrations\20191116011638_nullableSesion3.cs" />
+    <Compile Remove="Migrations\20191116011638_nullableSesion3.Designer.cs" />
+    <Compile Remove="Migrations\20191116011858_Tablas-Allqo.cs" />
+    <Compile Remove="Migrations\20191116011858_Tablas-Allqo.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

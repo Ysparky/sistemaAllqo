@@ -172,7 +172,7 @@ namespace sistemaAllqo.Migrations
                     edad = table.Column<string>(nullable: true),
                     idCliente = table.Column<int>(nullable: false),
                     idRaza = table.Column<int>(nullable: false),
-                    idSesion = table.Column<int>(nullable: false)
+                    idSesion = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -194,7 +194,7 @@ namespace sistemaAllqo.Migrations
                         column: x => x.idSesion,
                         principalTable: "Sesion",
                         principalColumn: "idSesion",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -209,7 +209,7 @@ namespace sistemaAllqo.Migrations
                     idCliente = table.Column<int>(nullable: false),
                     idServicio = table.Column<int>(nullable: false),
                     idTrabajador = table.Column<int>(nullable: false),
-                    idSesion = table.Column<int>(nullable: false),
+                    idSesion = table.Column<int>(nullable: true),
                     MascotaidMascota = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -238,7 +238,7 @@ namespace sistemaAllqo.Migrations
                         column: x => x.idSesion,
                         principalTable: "Sesion",
                         principalColumn: "idSesion",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Reserva_Trabajador_idTrabajador",
                         column: x => x.idTrabajador,

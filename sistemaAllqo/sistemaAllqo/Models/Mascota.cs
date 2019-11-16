@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -23,8 +24,9 @@ namespace sistemaAllqo.Models
         public int idRaza { get; set; }
         [DisplayName("Raza")]
         public Raza raza { get; set; }
-        public int idSesion { get; set; }
-        public Sesion sesion { get; set; }
+        public int? idSesion { get; set; }
+        [ForeignKey("idSesion")]
+        public virtual Sesion sesion { get; set; }
         public ICollection<Reserva> reservas { get; set; }
     }
 }
