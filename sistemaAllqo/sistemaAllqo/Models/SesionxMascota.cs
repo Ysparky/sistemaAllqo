@@ -10,9 +10,9 @@ namespace sistemaAllqo.Models
     {
         [Key]
         public int idSesionxm { get; set; }
-        public int idMascota { get; set; }
+        public int? idMascota { get; set; }
         public Mascota mascota { get; set; }
-        public int idSesion { get; set; }
+        public int? idSesion { get; set; }
         public Sesion sesion { get; set; }
     }
 }

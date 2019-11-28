@@ -98,4 +98,15 @@ E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.d
 E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.pdb
 E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.csproj.CopyComplete
 E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Pet.g.cshtml.cs
+E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Sesions\Create.g.cshtml.cs
+E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Sesions\Delete.g.cshtml.cs
+E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Sesions\Details.g.cshtml.cs
+E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Sesions\Edit.g.cshtml.cs
+E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Sesions\Index.g.cshtml.cs
+E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\SesionxMascotas\Create.g.cshtml.cs
+E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\SesionxMascotas\Delete.g.cshtml.cs
+E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\SesionxMascotas\Details.g.cshtml.cs
+E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\SesionxMascotas\Edit.g.cshtml.cs
+E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\SesionxMascotas\Index.g.cshtml.cs
+E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\Razor\Views\Reservas\AddsPetsToSesion.g.cshtml.cs
 E:\sistemaAllqo\sistemaAllqo\sistemaAllqo\obj\Debug\netcoreapp2.1\sistemaAllqo.csprojAssemblyReference.cache

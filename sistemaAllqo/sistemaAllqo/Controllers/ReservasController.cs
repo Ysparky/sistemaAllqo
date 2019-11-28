@@ -69,12 +69,46 @@ namespace sistemaAllqo.Controllers
         public async Task<IActionResult> Create([Bind("idReserva,fechaReservada,fechaSesion,estado,idCliente,idServicio,idTrabajador,idSesion")] Reserva reserva)
         {
             reserva.fechaReservada = DateTime.Now;
-            reserva.idSesion = null;
             if (ModelState.IsValid)
             {
-                _context.Add(reserva);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                int clienteFinded = _context.Cliente.Where(c => c.idCliente == reserva.idCliente).Select(c => c.idLugar).First();
+                string nombreLugarFinded = _context.Lugar.Where(l => l.idLugar == clienteFinded).Select(l => l.nombre).First();
+                //int servicioFinded = _context.Servicio.Where(s => s.idServicio == reserva.idServicio).Select(s => s.idServicio).First();
+                //Busca en las sesiones si hay lugares 
+                DateTime fechaSesionFinded = reserva.fechaSesion;
+                int idSesionFinded = _context.Sesion.Include(s=>s.reservas).Where(s => s.lugar == nombreLugarFinded && s.fechaSesion == fechaSesionFinded && s.idServicio == reserva.idServicio).Select(s => s.idSesion).FirstOrDefault();
+
+                if (idSesionFinded != 0)
+                {
+                    reserva.idSesion = idSesionFinded;
+                    _context.Add(reserva);
+                    _context.SaveChanges();
+                }
+                else if (idSesionFinded.Equals(0))
+                {
+                    Sesion newSesion = new Sesion();
+                    newSesion.fechaSesion = reserva.fechaSesion;
+                    newSesion.lugar = nombreLugarFinded;
+                    newSesion.idServicio = reserva.idServicio;
+                    //newSesion.servicio = 
+                    _context.Add(newSesion);
+                    _context.SaveChanges();
+                    reserva.idSesion = newSesion.idSesion;
+                    _context.Add(reserva);
+                    _context.SaveChanges();
+                }        
+                
+
+                SesionxMascota sesionxMascota = new SesionxMascota();
+                sesionxMascota.idSesion = reserva.idSesion;
+                _context.Add(sesionxMascota);
+                ViewData["idMascota"] = new SelectList(_context.Mascota.Where(e => e.idCliente == reserva.idCliente), "idMascota", "nombre");
+                return View("AddsPetsToSesion", sesionxMascota);
+
+                //sesionxMascota.idSesion = reserva.idSesion;
+                //_context.Add(sesionxMascota);
+                //ViewData["idMascota"] = new SelectList(_context.Mascota.Where(e=>e.idCliente == reserva.idCliente), "idMascota", "nombre");
+                //return View("AddsPetsToSesion", sesionxMascota);
             }
             ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "apellidos", reserva.idCliente);
             ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria", reserva.idServicio);

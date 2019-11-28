@@ -1,0 +1,51 @@
+﻿@model sistemaAllqo.Models.Sesion
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>Sesion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="fechaSesion" class="control-label"></label>
+                <input asp-for="fechaSesion" class="form-control" />
+                <span asp-validation-for="fechaSesion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="lugar" class="control-label"></label>
+                <input asp-for="lugar" class="form-control" />
+                <span asp-validation-for="lugar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idTipo" class="control-label"></label>
+                <input asp-for="idTipo" class="form-control" />
+                <span asp-validation-for="idTipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numMascotas" class="control-label"></label>
+                <input asp-for="numMascotas" class="form-control" />
+                <span asp-validation-for="numMascotas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="estado" class="control-label"></label>
+                <input asp-for="estado" class="form-control" />
+                <span asp-validation-for="estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

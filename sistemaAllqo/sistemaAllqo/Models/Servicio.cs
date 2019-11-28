@@ -19,5 +19,6 @@ namespace sistemaAllqo.Models
         public decimal precio { get; set; }
         public ICollection<Reserva> reservas { get; set; }
         public ICollection<DetalleComprobante> detalles { get; set; }
+        public ICollection<Sesion> sesiones { get; set; }
     }
 }

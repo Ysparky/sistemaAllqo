@@ -67,7 +67,7 @@ using sistemaAllqo.Models;
             WriteLiteral("\r\n\r\n<div class=\"card shadow\">\r\n    <div class=\"card-header\">\r\n        <h3 class=\"m-0 font-weight-bold text-primary float-left\">Cliente</h3>\r\n        ");
             EndContext();
             BeginContext(277, 82, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "221dfbc971da465d9d1c3b00076c89fe", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c7bf245a72c4ef68565c65485b4a96c", async() => {
                 BeginContext(347, 8, true);
                 WriteLiteral("Regresar");
                 EndContext();
@@ -90,7 +90,7 @@ using sistemaAllqo.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(369, 111, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75e0573212af407d91ea008fd2ad201b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0ab95222eeb74696b9d5f3bf86321eec", async() => {
                 BeginContext(470, 6, true);
                 WriteLiteral("Editar");
                 EndContext();
@@ -126,7 +126,7 @@ using sistemaAllqo.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(490, 120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9645cdcddd1b40a2ab80362798d3eb2d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7fe1b2fa4b7d429f98f0c7ff94f34c54", async() => {
                 BeginContext(590, 16, true);
                 WriteLiteral("Agregar Mascotas");
                 EndContext();

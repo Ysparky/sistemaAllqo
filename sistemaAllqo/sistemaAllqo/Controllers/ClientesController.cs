@@ -68,7 +68,7 @@ namespace sistemaAllqo.Controllers
                 Mascota mascota = new Mascota();
                 int idCliente = cliente.idCliente;
                 mascota.idCliente = idCliente;
-                mascota.idRaza = 1;
+                //mascota.idRaza = 1;
                 _context.Add(mascota);
                 ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "nombre");
                 return View("Pet", mascota);

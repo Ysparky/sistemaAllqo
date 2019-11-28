@@ -391,13 +391,19 @@ namespace sistemaAllqo.Migrations
 
                     b.Property<DateTime>("fechaSesion");
 
-                    b.Property<int?>("lugar");
+                    b.Property<int?>("idServicio");
+
+                    b.Property<int?>("idTipo");
+
+                    b.Property<string>("lugar");
 
                     b.Property<int?>("numMascotas");
 
-                    b.Property<int?>("tipoMascota");
-
                     b.HasKey("idSesion");
+
+                    b.HasIndex("idServicio");
+
+                    b.HasIndex("idTipo");
 
                     b.ToTable("Sesion");
                 });
@@ -408,9 +414,9 @@ namespace sistemaAllqo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("idMascota");
+                    b.Property<int?>("idMascota");
 
-                    b.Property<int>("idSesion");
+                    b.Property<int?>("idSesion");
 
                     b.HasKey("idSesionxm");
 
@@ -592,17 +598,26 @@ namespace sistemaAllqo.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("sistemaAllqo.Models.Sesion", b =>
+                {
+                    b.HasOne("sistemaAllqo.Models.Servicio", "servicio")
+                        .WithMany("sesiones")
+                        .HasForeignKey("idServicio");
+
+                    b.HasOne("sistemaAllqo.Models.TipoPerro", "tipoPerro")
+                        .WithMany()
+                        .HasForeignKey("idTipo");
+                });
+
             modelBuilder.Entity("sistemaAllqo.Models.SesionxMascota", b =>
                 {
                     b.HasOne("sistemaAllqo.Models.Mascota", "mascota")
                         .WithMany("sesionxMascotas")
-                        .HasForeignKey("idMascota")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("idMascota");
 
                     b.HasOne("sistemaAllqo.Models.Sesion", "sesion")
                         .WithMany("sesionxMascotas")
-                        .HasForeignKey("idSesion")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("idSesion");
                 });
 
             modelBuilder.Entity("sistemaAllqo.Models.Trabajador", b =>

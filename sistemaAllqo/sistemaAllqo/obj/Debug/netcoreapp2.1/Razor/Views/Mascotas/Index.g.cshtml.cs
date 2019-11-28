@@ -68,7 +68,7 @@ using sistemaAllqo.Models;
             WriteLiteral("\r\n<div class=\"card shadow\">\r\n    <div class=\"card-header \">\r\n        <h3 class=\"m-0 font-weight-bold text-primary\">MASCOTAS</h3>\r\n    </div>\r\n    <div class=\"card-body\">\r\n        <h2>Index</h2>\r\n\r\n        <p>\r\n            ");
             EndContext();
             BeginContext(361, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9fc8d8cff784486387320967490224ab", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cbf3bc20187d4abbae12b2febc2c4d4f", async() => {
                 BeginContext(384, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -197,7 +197,7 @@ using sistemaAllqo.Models;
             WriteLiteral("\r\n                            </td>\r\n                            <td>\r\n                                ");
             EndContext();
             BeginContext(2127, 99, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72ec140dbdd74384bc15cb2fe0bf81fc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ca89ea541f147a3b61f5e2fb7637f98", async() => {
                 BeginContext(2195, 27, true);
                 WriteLiteral("<i class=\"fas fa-edit\"></i>");
                 EndContext();
@@ -233,7 +233,7 @@ using sistemaAllqo.Models;
             WriteLiteral(" |\r\n                                ");
             EndContext();
             BeginContext(2262, 101, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15080dffe9584de18748862a18b02dbf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "54d3b10d63b34e0d8a9986d79906d157", async() => {
                 BeginContext(2333, 26, true);
                 WriteLiteral("<i class=\"fas fa-eye\"></i>");
                 EndContext();
@@ -269,7 +269,7 @@ using sistemaAllqo.Models;
             WriteLiteral(" |\r\n                                ");
             EndContext();
             BeginContext(2399, 106, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fe599893154b4cf0bb59af45fda09fae", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ce322cec9b6948d88696316646651bb4", async() => {
                 BeginContext(2469, 32, true);
                 WriteLiteral("<i class=\"fas fa-trash-alt\"></i>");
                 EndContext();

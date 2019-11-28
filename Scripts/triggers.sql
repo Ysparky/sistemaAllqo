@@ -1,8 +1,10 @@
 --TRIGGERS-
+drop trigger dbo.create_Sesion
 ALTER TRIGGER create_Sesion
 ON RESERVA
-AFTER INSERT
-AS BEGIN
+FOR INSERT
+AS 
+BEGIN
 DECLARE 
 @RESERVAID INT,
 @CLIENTEID INT,
@@ -23,42 +25,53 @@ SET @RESERVAID = (SELECT idReserva FROM inserted)
 SET @FIND_SESION = (SELECT idSesion FROM Sesion WHERE Lugar = @LUGAR AND fechaSesion = @FECHA_SESION)
 --Si no existen fechas con ese id
 IF(@FIND_SESION IS NULL)
-BEGIN
-INSERT INTO Sesion(fechaSesion,lugar) VALUES(@FECHA_SESION,@LUGAR)
+	BEGIN
+		INSERT INTO Sesion(fechaSesion,lugar) VALUES(@FECHA_SESION,@LUGAR)
+		SET @SESIONID = (SELECT idSesion FROM Sesion WHERE fechaSesion = @FECHA_SESION AND lugar = @LUGAR)
+		UPDATE Reserva SET idSesion = @SESIONID WHERE idReserva = @RESERVAID
 
+	END
+ELSE
+	BEGIN
+		UPDATE Reserva SET idSesion = @FIND_SESION WHERE idReserva = @RESERVAID
+	END
+END
+
+
+
+INSERT INTO Reserva(fechaReservada,fechaSesion,estado,idCliente,idServicio,idTrabajador,idSesion) VALUES('2019-04-15 11:30:00','2022-05-16 13:00:00','Creado',3,2,6,NULL)
+
+select * from Sesion
+select * from Reserva
+SELECT * FROM SesionxMascota
+SELECT * FROM Sesion
+DROP TRIGGER numMascotas
+ALTER TRIGGER numMascotas
+ON SESION
+AFTER INSERT
+AS
+BEGIN
+DECLARE
+@NMASCOTAS INT,
+@SESIONID INT
 SET @SESIONID = (SELECT idSesion FROM inserted)
-UPDATE Reserva SET idSesion = @SESIONID WHERE idReserva = @RESERVAID
+SET @NMASCOTAS = (SELECT numMascotas FROM Sesion WHERE idSesion = @SESIONID)
+IF(@NMASCOTAS > 6)
+BEGIN
+	ROLLBACK
+END
+ELSE IF(@NMASCOTAS IS NULL)
+BEGIN
+UPDATE Sesion SET numMascotas = 1 WHERE idSesion = @SESIONID
 END
 ELSE
 BEGIN
-UPDATE Reserva SET idSesion = @FIND_SESION WHERE idReserva = @RESERVAID
+	SET @NMASCOTAS = @NMASCOTAS + 1
+	UPDATE Sesion SET numMascotas = @NMASCOTAS WHERE idSesion = @SESIONID
 END
 END
 
-DROP TRIGGER dbo.updated_Reserva
-CREATE OR ALTER TRIGGER updated_Reserva
-ON SESION
-AFTER INSERT
-AS BEGIN
-DECLARE
-@idReserva int,
-@idSesion int
-SET @idReserva = (SELECT TOP(1) idReserva FROM Reserva WHERE idSesion IS NULL)
-SET @idSesion = (SELECT TOP(1) idSesion FROM inserted)
-UPDATE Reserva SET idSesion = @idSesion WHERE idReserva = @idReserva
-END
 
-delete Reserva where idReserva = 61
-delete Sesion where idSesion= 7
-SELECT * FROM Reserva
-SELECT * FROM Sesion
-INSERT INTO Reserva(fechaReservada,fechaSesion,estado,idCliente,idServicio,idTrabajador,idSesion) VALUES('2019-04-15 11:30:00','2019-05-16 13:00:00','Creado',3,2,6,NULL)
-SELECT * FROM Cliente
-
-
-SELECT idSesion FROM Sesion WHERE Lugar = 'Miraflores' AND fechaSesion = '2019-04-13 11:00:00'
-select dbo.hola(2)
-
---Creo mi sesion siempre y cuando no exista una sesion con esa fecha y en el mismo lugar
-
-select idReserva from Reserva where idSesion is null
+SELECT * FROM Trabajador (5,6,7,8)
+SELECT * FROM Cliente (1,2,3,4,5,6)
+INSERT INTO Reserva 

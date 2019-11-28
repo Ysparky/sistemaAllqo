@@ -11,8 +11,11 @@ namespace sistemaAllqo.Models
         [Key]
         public int idSesion { get; set; }
         public DateTime fechaSesion { get; set; }
-        public int? lugar { get; set; }
-        public int? tipoMascota { get; set; }
+        public string lugar { get; set; }
+        public int? idTipo { get; set; }
+        public TipoPerro tipoPerro { get; set; }
+        public int? idServicio { get; set; }
+        public Servicio servicio { get; set; }
         public int? numMascotas { get; set; }
         public string estado { get; set; }
         public ICollection<Reserva> reservas { get; set; }

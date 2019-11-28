@@ -1,0 +1,49 @@
+﻿@model sistemaAllqo.Models.Sesion
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sesion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaSesion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fechaSesion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.lugar)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.lugar)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.idTipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.idTipo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.numMascotas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.numMascotas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idSesion">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,37 @@
+﻿@model sistemaAllqo.Models.SesionxMascota
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>SesionxMascota</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="idSesionxm" />
+            <div class="form-group">
+                <label asp-for="idMascota" class="control-label"></label>
+                <select asp-for="idMascota" class="form-control" asp-items="ViewBag.idMascota"></select>
+                <span asp-validation-for="idMascota" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idSesion" class="control-label"></label>
+                <select asp-for="idSesion" class="form-control" asp-items="ViewBag.idSesion"></select>
+                <span asp-validation-for="idSesion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
