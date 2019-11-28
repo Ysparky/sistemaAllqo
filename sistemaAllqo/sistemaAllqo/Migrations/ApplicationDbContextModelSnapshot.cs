@@ -15,7 +15,7 @@ namespace sistemaAllqo.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
+                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -301,7 +301,7 @@ namespace sistemaAllqo.Migrations
 
                     b.Property<int>("idCliente");
 
-                    b.Property<int>("idRaza");
+                    b.Property<int?>("idRaza");
 
                     b.Property<string>("nombre");
 
@@ -389,7 +389,13 @@ namespace sistemaAllqo.Migrations
 
                     b.Property<string>("estado");
 
-                    b.Property<int>("numMascotas");
+                    b.Property<DateTime>("fechaSesion");
+
+                    b.Property<int?>("lugar");
+
+                    b.Property<int?>("numMascotas");
+
+                    b.Property<int?>("tipoMascota");
 
                     b.HasKey("idSesion");
 
@@ -553,8 +559,7 @@ namespace sistemaAllqo.Migrations
 
                     b.HasOne("sistemaAllqo.Models.Raza", "raza")
                         .WithMany("mascotas")
-                        .HasForeignKey("idRaza")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("idRaza");
                 });
 
             modelBuilder.Entity("sistemaAllqo.Models.Raza", b =>

@@ -41,13 +41,15 @@ namespace sistemaAllqo.Controllers
             {
                 return NotFound();
             }
-
+            List<Mascota> mascotas = _context.Set<Mascota>().Where(item => item.idCliente == id).Include(e => e.raza).ToList();
+            ViewData["Mascotas"] = mascotas;
             return View(cliente);
         }
 
         // GET: Clientes/Create
         public IActionResult Create()
         {
+            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "idRaza");
             ViewData["idLugar"] = new SelectList(_context.Lugar, "idLugar", "nombre");
             return View();
         }
@@ -63,12 +65,40 @@ namespace sistemaAllqo.Controllers
             {
                 _context.Add(cliente);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                Mascota mascota = new Mascota();
+                int idCliente = cliente.idCliente;
+                mascota.idCliente = idCliente;
+                mascota.idRaza = 1;
+                _context.Add(mascota);
+                ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "nombre");
+                return View("Pet", mascota);
             }
-            ViewData["idLugar"] = new SelectList(_context.Lugar, "idLugar", "nombre", cliente.idLugar);
-            return View(cliente);
+            ViewData["idLugar"] = new SelectList(_context.Lugar, "idLugar", "nombre", cliente.lugar.nombre);
+            return View();
         }
-
+        public async Task<IActionResult> Pet(int? id)
+        {
+            var cliente = await _context.Cliente.FindAsync(id);
+            Mascota mascota = new Mascota();
+            mascota.idCliente = cliente.idCliente;
+            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "nombre");
+            return View(mascota);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Pet([Bind("idMascota,nombre,edad,idCliente,idRaza")] Mascota mascota)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(mascota);
+                await _context.SaveChangesAsync();
+                
+                return RedirectToAction(nameof(Details));
+            }
+            ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", mascota.idCliente);
+            ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "idRaza", mascota.idRaza);
+            return View(mascota);
+        }
         // GET: Clientes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -85,7 +115,6 @@ namespace sistemaAllqo.Controllers
             ViewData["idLugar"] = new SelectList(_context.Lugar, "idLugar", "nombre", cliente.idLugar);
             return View(cliente);
         }
-
         // POST: Clientes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -151,7 +180,10 @@ namespace sistemaAllqo.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
+        private bool MascotaExists(int id)
+        {
+            return _context.Mascota.Any(e => e.idMascota == id);
+        }
         private bool ClienteExists(int id)
         {
             return _context.Cliente.Any(e => e.idCliente == id);

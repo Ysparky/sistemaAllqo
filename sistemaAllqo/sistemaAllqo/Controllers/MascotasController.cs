@@ -65,7 +65,7 @@ namespace sistemaAllqo.Controllers
             {
                 _context.Add(mascota);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details/"+mascota.idCliente,"Clientes");
             }
             ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "idCliente", mascota.idCliente);
             ViewData["idRaza"] = new SelectList(_context.Raza, "idRaza", "idRaza", mascota.idRaza);

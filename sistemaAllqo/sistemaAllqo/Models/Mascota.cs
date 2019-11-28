@@ -21,7 +21,7 @@ namespace sistemaAllqo.Models
         [DisplayName("Cliente")]
         public Cliente cliente { get; set; }
         [DisplayName("Raza")]
-        public int idRaza { get; set; }
+        public int? idRaza { get; set; }
         [DisplayName("Raza")]
         public Raza raza { get; set; }
         public ICollection<SesionxMascota> sesionxMascotas { get; set; }

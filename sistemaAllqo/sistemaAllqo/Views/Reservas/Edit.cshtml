@@ -14,7 +14,7 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="idReserva" />
-            <div class="form-group">
+            <div class="form-group" hidden>
                 <label asp-for="fechaReservada" class="control-label"></label>
                 <input asp-for="fechaReservada" class="form-control" />
                 <span asp-validation-for="fechaReservada" class="text-danger"></span>
@@ -24,7 +24,7 @@
                 <input asp-for="fechaSesion" class="form-control" />
                 <span asp-validation-for="fechaSesion" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" hidden>
                 <label asp-for="estado" class="control-label"></label>
                 <input asp-for="estado" class="form-control" />
                 <span asp-validation-for="estado" class="text-danger"></span>

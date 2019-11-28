@@ -7,65 +7,120 @@
 
 <div class="card shadow">
     <div class="card-header ">
-        <h3 class="m-0 font-weight-bold text-primary">RESERVAS</h3>
+        <h3 class="m-0 font-weight-bold text-primary float-left">RESERVAS</h3>
+
+        <a class="btn btn-info text-wrap float-right" asp-action="Create">Reservar Sesión</a>
     </div>
     <div class="card-body">
-        <h2>Index</h2>
-
-        <p>
-            <a asp-action="Create">Create New</a>
-        </p>
-        <div class="table-responsive container">
-
-            <table class=" table table-bordered text-center table-hover " id="tabla" style="width: 100%;">
-                <thead>
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.fechaReservada)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.fechaSesion)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.estado)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.cliente)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.servicio)
-                        </th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
+        <div class="card mb-4">
+            <div class="card-header">
+                <div class="card-title mb-0"><strong>Adiestramientos</strong></div>
+            </div>
+            <div class="card-body">
+                <table id="tabla" class="table text-center table-hover text-wrap">
+                    <thead class="thead-dark">
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.fechaReservada)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.fechaSesion)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.estado)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.cliente.idCliente)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.servicio.idServicio)
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.idReserva">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.idReserva">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.idReserva">Delete</a>
-                            </td>
+                            <th class="text-white">
+                                @Html.DisplayNameFor(model => model.fechaSesion)
+                            </th>
+                            <th class="text-white">
+                                @Html.DisplayNameFor(model => model.cliente)
+                            </th>
+                            <th class="text-white">
+                                @Html.DisplayNameFor(model => model.servicio)
+                            </th>
+                            <th class="text-white">
+                                @Html.DisplayNameFor(model => model.estado)
+                            </th>
+                            <th class="text-white">OPCIONES</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewData["adiestramientos"] as IEnumerable<sistemaAllqo.Models.Reserva>)
+                        {
+                            <tr>
+                                <td>
+                                    @{
+                                        DateTime fecha = item.fechaSesion;
+                                        if (item.estado == "Creado") { ViewData["Estado"] = "bg-info"; } else { ViewData["Estado"] = "bg-success"; }
+                                    }
+                                    @fecha.ToString("dddd dd MMMM yyyy, hh:mm tt")
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.cliente.dni)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.servicio.categoria)
+                                </td>
+                                <td>
+                                    <div class="@ViewData["Estado"] rounded-pill">@Html.DisplayFor(modelItem => item.estado)</div>
+                                </td>
+                                <td>
+                                    <a class="btn p-1" asp-action="Edit" asp-route-id="@item.idReserva"><i class="fas fa-edit"></i></a> |
+                                    <a class="btn p-1" asp-action="Details" asp-route-id="@item.idReserva"><i class="fas fa-eye"></i></a> |
+                                    <a class="btn p-1" asp-action="Delete" asp-route-id="@item.idReserva"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title mb-0"><strong>Paseos</strong></div>
+            </div>
+            <div class="card-body">
+                <table id="tabla" class="table text-center table-hover text-wrap">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="text-white">
+                                @Html.DisplayNameFor(model => model.fechaSesion)
+                            </th>
+                            <th class="text-white">
+                                @Html.DisplayNameFor(model => model.cliente)
+                            </th>
+                            <th class="text-white">
+                                @Html.DisplayNameFor(model => model.servicio)
+                            </th>
+                            <th class="text-white">
+                                @Html.DisplayNameFor(model => model.estado)
+                            </th>
+                            <th class="text-white">OPCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewData["paseos"] as IEnumerable<sistemaAllqo.Models.Reserva>)
+                        {
+                            <tr>
+                                <td>
+                                    @{
+                                        DateTime fecha = item.fechaSesion;
+                                        if (item.estado == "Creado") { ViewData["Estado"] = "bg-info"; } else { ViewData["Estado"] = "bg-success"; }
+                                    }
+                                    @fecha.ToString("dddd dd MMMM yyyy, hh:mm tt")
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.cliente.dni)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.servicio.categoria)
+                                </td>
+                                <td>
+                                    <div class="@ViewData["Estado"] rounded-pill">@Html.DisplayFor(modelItem => item.estado)</div>
+                                </td>
+                                <td>
+                                    <a class="btn p-1" asp-action="Edit" asp-route-id="@item.idReserva"><i class="fas fa-edit"></i></a> |
+                                    <a class="btn p-1" asp-action="Details" asp-route-id="@item.idReserva"><i class="fas fa-eye"></i></a> |
+                                    <a class="btn p-1" asp-action="Delete" asp-route-id="@item.idReserva"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

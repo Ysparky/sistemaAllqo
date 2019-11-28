@@ -1,0 +1,32 @@
+﻿@model sistemaAllqo.Models.Mascota
+@{
+    ViewData["Title"] = "Pet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Pet</h2>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Mascotas" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="idCliente" hidden />
+            <div class="form-group">
+                <label asp-for="nombre" class="control-label"></label>
+                <input asp-for="nombre" class="form-control" />
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="edad" class="control-label"></label>
+                <input asp-for="edad" class="form-control" />
+                <span asp-validation-for="edad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idRaza" class="control-label"></label>
+                <select asp-for="idRaza" class="form-control" asp-items="ViewBag.idRaza"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>

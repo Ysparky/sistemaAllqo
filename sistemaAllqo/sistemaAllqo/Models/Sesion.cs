@@ -10,7 +10,10 @@ namespace sistemaAllqo.Models
     {
         [Key]
         public int idSesion { get; set; }
-        public int numMascotas { get; set; }
+        public DateTime fechaSesion { get; set; }
+        public int? lugar { get; set; }
+        public int? tipoMascota { get; set; }
+        public int? numMascotas { get; set; }
         public string estado { get; set; }
         public ICollection<Reserva> reservas { get; set; }
         public ICollection<SesionxMascota> sesionxMascotas { get; set; }
