@@ -63,14 +63,27 @@ namespace sistemaAllqo.Controllers
         {
             if (ModelState.IsValid)
             {
+                //VERIFICAR QUE LA MASCOTA INGRESADA NO SEA LA MISMA
+                //Busco el idMascota  y busco el idSesion
+                bool duplicado = _context.SesionxMascota.Any(s => s.idMascota == sesionxMascota.idMascota && s.idSesion == sesionxMascota.idSesion);
                 var sesion = _context.Sesion.Find(sesionxMascota.idSesion);
                 var mascota = _context.Mascota.Where(m => m.idMascota == sesionxMascota.idMascota).Select(s => s.idRaza).First();
                 var tipoRaza = _context.Raza.Where(r => r.idRaza == mascota).Select(s => s.idTipo).First();
-                sesion.idTipo = tipoRaza;
-                _context.Update(sesion);
-                _context.Add(sesionxMascota);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Details/"+sesionxMascota.idSesion,"Sesions");
+                if (!duplicado)
+                {
+                    //Actualiza el tipo de raza de la sesion y agrega mascotas a la sesion                    
+                    sesion.idTipo = tipoRaza;
+                    _context.Update(sesion);
+                    _context.Add(sesionxMascota);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Details/" + sesionxMascota.idSesion, "Sesions");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty,"¡La mascota ingresada ya está en este Sesión!");
+                    return View(sesion);
+                }
+                
             }
             ViewData["idMascota"] = new SelectList(_context.Mascota, "idMascota", "idMascota", sesionxMascota.idMascota);
             ViewData["idSesion"] = new SelectList(_context.Sesion, "idSesion", "idSesion", sesionxMascota.idSesion);

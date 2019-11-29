@@ -53,7 +53,7 @@ namespace sistemaAllqo.Controllers
         // GET: Reservas/Create
         public IActionResult Create()
         {
-            ViewData["idCliente"] = new SelectList(_context.Cliente.Where(e=>e.mascotas.Count != 0), "idCliente", "apellidos");
+            ViewData["idCliente"] = new SelectList(_context.Cliente.Where(e => e.mascotas.Count != 0), "idCliente", "apellidos");
             ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria");
             ViewData["idSesion"] = new SelectList(_context.Sesion, "idSesion", "idSesion");
             ViewData["idTrabajador"] = new SelectList(_context.Trabajador, "idTrabajador", "apellidos");
@@ -72,11 +72,21 @@ namespace sistemaAllqo.Controllers
             if (ModelState.IsValid)
             {
                 int clienteFinded = _context.Cliente.Where(c => c.idCliente == reserva.idCliente).Select(c => c.idLugar).First();
-                string nombreLugarFinded = _context.Lugar.Where(l => l.idLugar == clienteFinded).Select(l => l.nombre).First();
+                string nombreLugarFinded;
                 //int servicioFinded = _context.Servicio.Where(s => s.idServicio == reserva.idServicio).Select(s => s.idServicio).First();
                 //Busca en las sesiones si hay lugares 
+                if (reserva.idServicio == 1)
+                {
+                    nombreLugarFinded = "Local";
+                }
+                else
+                {
+                    nombreLugarFinded = _context.Lugar.Where(l => l.idLugar == clienteFinded).Select(l => l.nombre).First();
+                }
                 DateTime fechaSesionFinded = reserva.fechaSesion;
-                int idSesionFinded = _context.Sesion.Include(s=>s.reservas).Where(s => s.lugar == nombreLugarFinded && s.fechaSesion == fechaSesionFinded && s.idServicio == reserva.idServicio).Select(s => s.idSesion).FirstOrDefault();
+                //Encuentra la sesión donde el lugar, la fecha y el servicio es el mismo
+                int idSesionFinded = _context.Sesion.Include(s => s.reservas).Where(s => s.lugar == nombreLugarFinded && s.fechaSesion == fechaSesionFinded && s.idServicio == reserva.idServicio).Select(s => s.idSesion).FirstOrDefault();
+
 
                 if (idSesionFinded != 0)
                 {
@@ -88,27 +98,29 @@ namespace sistemaAllqo.Controllers
                 {
                     Sesion newSesion = new Sesion();
                     newSesion.fechaSesion = reserva.fechaSesion;
-                    newSesion.lugar = nombreLugarFinded;
                     newSesion.idServicio = reserva.idServicio;
+                    if (reserva.idServicio == 1)
+                    {
+                        newSesion.lugar = "Local";
+                    }
+                    else
+                    {
+                        newSesion.lugar = nombreLugarFinded;
+                    }
                     //newSesion.servicio = 
                     _context.Add(newSesion);
                     _context.SaveChanges();
                     reserva.idSesion = newSesion.idSesion;
                     _context.Add(reserva);
                     _context.SaveChanges();
-                }        
-                
+                }
+
 
                 SesionxMascota sesionxMascota = new SesionxMascota();
                 sesionxMascota.idSesion = reserva.idSesion;
                 _context.Add(sesionxMascota);
                 ViewData["idMascota"] = new SelectList(_context.Mascota.Where(e => e.idCliente == reserva.idCliente), "idMascota", "nombre");
                 return View("AddsPetsToSesion", sesionxMascota);
-
-                //sesionxMascota.idSesion = reserva.idSesion;
-                //_context.Add(sesionxMascota);
-                //ViewData["idMascota"] = new SelectList(_context.Mascota.Where(e=>e.idCliente == reserva.idCliente), "idMascota", "nombre");
-                //return View("AddsPetsToSesion", sesionxMascota);
             }
             ViewData["idCliente"] = new SelectList(_context.Cliente, "idCliente", "apellidos", reserva.idCliente);
             ViewData["idServicio"] = new SelectList(_context.Servicio, "idServicio", "categoria", reserva.idServicio);

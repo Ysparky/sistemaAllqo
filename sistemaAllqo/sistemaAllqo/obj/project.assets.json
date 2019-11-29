@@ -12530,27 +12530,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\desarrollo\\.nuget\\packages\\": {},
-    "C:\\ProgramData\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Emperatriz\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo.csproj",
+      "projectUniqueName": "C:\\Users\\Emperatriz\\Desktop\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo.csproj",
       "projectName": "sistemaAllqo",
-      "projectPath": "E:\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo.csproj",
-      "packagesPath": "C:\\Users\\desarrollo\\.nuget\\packages\\",
-      "outputPath": "E:\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo\\obj\\",
+      "projectPath": "C:\\Users\\Emperatriz\\Desktop\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo.csproj",
+      "packagesPath": "C:\\Users\\Emperatriz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emperatriz\\Desktop\\sistemaAllqo\\sistemaAllqo\\sistemaAllqo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\ProgramData\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\desarrollo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Emperatriz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"

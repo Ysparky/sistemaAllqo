@@ -25,7 +25,6 @@ namespace sistemaAllqo.Controllers
             var applicationDbContext = _context.Cliente.Include(c => c.lugar);
             return View(await applicationDbContext.ToListAsync());
         }
-
         // GET: Clientes/Details/5
         public async Task<IActionResult> Details(int? id)
         {

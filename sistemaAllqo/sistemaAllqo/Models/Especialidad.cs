@@ -11,6 +11,5 @@ namespace sistemaAllqo.Models
         [Key]
         public int idEspecialidad { get; set; }
         public string nombre { get; set; }
-        public ICollection<Trabajador> trabajadores { get; set; }
     }
 }

@@ -22,6 +22,7 @@ namespace sistemaAllqo.Controllers
         // GET: Sesions
         public async Task<IActionResult> Index()
         {
+            ViewData["listSXM"] = _context.Set<SesionxMascota>().Include(s=>s.mascota).ThenInclude(s=>s.cliente).ToList();
             return View(await _context.Sesion.Include(s => s.servicio).Include(s => s.tipoPerro).ToListAsync());
         }
 

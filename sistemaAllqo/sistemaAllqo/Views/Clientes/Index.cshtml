@@ -3,76 +3,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    string color;
 }
 
-<div class="card shadow">
-    <div class="card-header ">
-        <h3 class="m-0 font-weight-bold text-primary">CLIENTES</h3>
-    </div>
-    <div class="card-body">
-        <h2>Index</h2>
+<partial name="_Index.cshtml" />
 
-        <p>
-            <a asp-action="Create">Create New</a>
-        </p>
-        <div class="container">
-            <table class=" table table-bordered text-center table-hover table-responsive " id="tabla">
-                <thead>
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.dni)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.apellidos)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.nombres)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.correo)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.numCelular)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.estado)
-                        </th>
-                        <th>Opciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.dni)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.apellidos)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nombres)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.correo)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.numCelular)
-                            </td>
-                            <td>
-                                @if(item.estado == "Registrado") { color = "bg-green"; } else{ color = "bg-red"; }
-                                <div class="@color rounded-pill">@Html.DisplayFor(modelItem => item.estado)</div>
-                            </td>
-                            <td>
-                                <a class="btn p-1" asp-action="Edit" asp-route-id="@item.idCliente"><i class="fas fa-edit"></i></a> |
-                                <a class="btn p-1" asp-action="Details" asp-route-id="@item.idCliente"><i class="fas fa-eye"></i></a> |
-                                <a class="btn p-1" asp-action="Delete" asp-route-id="@item.idCliente"><i class="fas fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
