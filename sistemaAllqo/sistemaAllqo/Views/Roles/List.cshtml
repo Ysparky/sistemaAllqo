@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@model IEnumerable<IdentityRole>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Roles</h1>
+@if (Model.Any())
+{
+    <a class="btn btn-default mb-3" style="width:auto" asp-action="Create" asp-controller="Roles">Agregar nuevo rol</a>
+    foreach (var role in Model)
+    {
+        <hr />
+        <div class="card mb-3">
+            <div class="card-header">
+                Rol Id: @role.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Nombre: @role.Name</h5>
+            </div>
+            <div class="card-footer">
+                <form asp-action="Delete" asp-route-id="@role.Id" method="post">
+                    <a class="btn btn-primary" asp-action="Edit" asp-controller="Roles" asp-route-id="@role.Id">Editar</a>
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            No hay roles creados todavía...
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">
+                Usa el siguiente botón para crear nuevos roles
+            </h5>
+            <a class="btn btn-default" style="width:auto" asp-controller="Roles" asp-action="Create">
+                Crear rol
+            </a>
+        </div>
+    </div>
+}

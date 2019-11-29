@@ -2,36 +2,136 @@
 @model RegisterModel
 @{
     ViewData["Title"] = "Register";
+    Layout = null;
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="~/css/login.css" rel="stylesheet" />
+    <title>@ViewData["Title"] - Allqo</title>
+</head>
+<body>
 
-<h2>@ViewData["Title"]</h2>
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
+    <div class="row">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post" class="py-5 ">
+            <h3 class="text-muted text-capitalize">Registrar Nuevo Usuario</h3>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>
+                        <p asp-for="Input.ape" class="label-txt">Apellidos:</p>
+                        <input asp-for="Input.ape" type="text" class="input">
+                        <div class="line-box">
+                            <div class="line"></div>
+                        </div>
+                        <span asp-validation-for="Input.ape" class="text-danger"></span>
+                    </label>
+                </div>
+                <div class="form-group col">
+                    <label>
+                        <p asp-for="Input.nom" class="label-txt">Nombres:</p>
+                        <input asp-for="Input.nom" type="text" class="input">
+                        <div class="line-box">
+                            <div class="line"></div>
+                        </div>
+                        <span asp-validation-for="Input.nom" class="text-danger"></span>
+                    </label>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>
+                        <p asp-for="Input.dni" class="label-txt">DNI:</p>
+                        <input asp-for="Input.dni" type="text" class="input">
+                        <div class="line-box">
+                            <div class="line"></div>
+                        </div>
+                        <span asp-validation-for="Input.dni" class="text-danger"></span>
+                    </label>
+                </div>
+                <div class="form-group col">
+                    <label>
+                        <p asp-for="Input.Email" class="label-txt">Correo:</p>
+                        <input asp-for="Input.Email" type="text" class="input">
+                        <div class="line-box">
+                            <div class="line"></div>
+                        </div>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </label>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
-                <input asp-for="Input.ConfirmPassword" class="form-control" />
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>
+                        <p asp-for="Input.cel" class="label-txt">Celular:</p>
+                        <input asp-for="Input.cel" type="text" class="input">
+                        <div class="line-box">
+                            <div class="line"></div>
+                        </div>
+                        <span asp-validation-for="Input.cel" class="text-danger"></span>
+                    </label>
+                </div>
+                <div class="form-group col">
+                    <label>
+                        <p asp-for="Input.dir" class="label-txt">Dirección:</p>
+                        <input asp-for="Input.dir" type="text" class="input">
+                        <div class="line-box">
+                            <div class="line"></div>
+                        </div>
+                        <span asp-validation-for="Input.dir" class="text-danger"></span>
+                    </label>
+                </div>
             </div>
-            <button type="submit" class="btn btn-default">Register</button>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>
+                        <p asp-for="Input.Password" class="label-txt">Contraseña:</p>
+                        <input asp-for="Input.Password" type="password" class="input">
+                        <div class="line-box">
+                            <div class="line"></div>
+                        </div>
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </label>
+                </div>
+                <div class="form-group col">
+                    <label>
+                        <p asp-for="Input.ConfirmPassword" class="label-txt">Confirmar Contraseña:</p>
+                        <input asp-for="Input.ConfirmPassword" type="password" class="input">
+                        <div class="line-box">
+                            <div class="line"></div>
+                        </div>
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </label>
+                </div>
+            </div>
+            <button type="submit">Registrar</button>
+            <p class="text-muted mt-3">¿Ya tienes una cuenta?, <a asp-action="Login" asp-controller="Identity/Account">Ingresa aquí</a></p>
         </form>
     </div>
-</div>
+    <script>
+        $(document).ready(function () {
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+            $('.input').focus(function () {
+                $(this).parent().find(".label-txt").addClass('label-active');
+            });
+
+            $(".input").focusout(function () {
+                if ($(this).val() == '') {
+                    $(this).parent().find(".label-txt").removeClass('label-active');
+                };
+            });
+
+        });
+    </script>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+    s
+</body>
+</html>

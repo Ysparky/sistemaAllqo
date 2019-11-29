@@ -37,7 +37,9 @@ namespace sistemaAllqo
             services.AddDbContextPool<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("ApplicationDbContext")));
-            services.AddDefaultIdentity<IdentityUser>()
+
+
+            services.AddDefaultIdentity<IdentityUser>(options => options.Password.RequireNonAlphanumeric = false).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

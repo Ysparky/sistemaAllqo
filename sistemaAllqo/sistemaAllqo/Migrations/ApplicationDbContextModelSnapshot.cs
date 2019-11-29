@@ -263,19 +263,6 @@ namespace sistemaAllqo.Migrations
                     b.ToTable("DetalleComprobante");
                 });
 
-            modelBuilder.Entity("sistemaAllqo.Models.Especialidad", b =>
-                {
-                    b.Property<int>("idEspecialidad")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("nombre");
-
-                    b.HasKey("idEspecialidad");
-
-                    b.ToTable("Especialidad");
-                });
-
             modelBuilder.Entity("sistemaAllqo.Models.Lugar", b =>
                 {
                     b.Property<int>("idLugar")
@@ -454,32 +441,13 @@ namespace sistemaAllqo.Migrations
 
                     b.Property<int>("dni");
 
-                    b.Property<int>("idEspecialidad");
-
                     b.Property<string>("nombres");
 
-                    b.Property<long>("numCel");
+                    b.Property<int>("numCel");
 
                     b.HasKey("idTrabajador");
 
-                    b.HasIndex("idEspecialidad");
-
                     b.ToTable("Trabajador");
-                });
-
-            modelBuilder.Entity("sistemaAllqo.Models.Usuario", b =>
-                {
-                    b.Property<int>("idUsuario")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("password");
-
-                    b.Property<string>("usuario");
-
-                    b.HasKey("idUsuario");
-
-                    b.ToTable("Usuario");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -618,14 +586,6 @@ namespace sistemaAllqo.Migrations
                     b.HasOne("sistemaAllqo.Models.Sesion", "sesion")
                         .WithMany("sesionxMascotas")
                         .HasForeignKey("idSesion");
-                });
-
-            modelBuilder.Entity("sistemaAllqo.Models.Trabajador", b =>
-                {
-                    b.HasOne("sistemaAllqo.Models.Especialidad", "especialidad")
-                        .WithMany("trabajadores")
-                        .HasForeignKey("idEspecialidad")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
